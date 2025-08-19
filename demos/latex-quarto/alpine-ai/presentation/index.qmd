@@ -137,10 +137,31 @@ This section details the key tools that power my AI workflow.
 
 ---
 
+## AI in Action: Automatic LinkedIn CRM
+
+::: {.r-fit-text}
+**The Complete Workflow:**
+- **Input Flexibility:** CSV export, screenshot, or simple copy-paste of LinkedIn connections
+- **Deep AI Research:** Claude Code investigates each person's background, current role, and company context
+- **Context Layer Integration:** Cross-references against my personal context (career goals, business challenges, opportunities)
+- **Strategic Reconciliation:** Identifies potential collaborators, advisors, or business opportunities based on alignment
+- **Automated Database:** Builds enriched contact profiles with actionable insights and next steps
+
+**Key Insight:** This transforms passive networking into active relationship strategy. Instead of hoping to remember who someone is months later, AI creates a living database that understands *why* each connection matters to your specific goals.
+
+**The Context Layer Dependency:** This only works because I maintain detailed context files in GitHub—my career aspirations, current projects, industry focus areas. Without this foundation, AI can't make meaningful connections.
+:::
+
+![](images/automatic-crm-via-linkedin-data.png){.r-stretch}
+
+---
+
 ## Workflow: Personal Augment (Vocabulary Builder)
 
-- Inspired by *Word Power Made Easy*.
-- Feed transcripts or documents to learn new words at the edge of your vocabulary.
+*   **Inspired by:** "Word Power Made Easy" by legendary grammarian Norman Lewis.
+*   **Functionality:** Feed it your work calls, presentations, or documents. The AI helps you learn vocabulary at the very edge of your knowledge base, making your language more precise and impactful.
+*   **Advanced Application:** An implementation based on "The Well-Spoken Thesaurus" by Tom Heehler. This analyzes your content, encouraging you to replace weak phrases and words with stronger, more meaningful, and active vocabulary.
+*   **The Power of AI:** This demonstrates how AI can take a finite resource—a beloved book or a specific pedagogical approach—and extend its value infinitely. You can continue to benefit from an author's profound insights and teachings, even if they are no longer with us, by applying their methods through AI to your own contemporary content. This transforms a static resource into a dynamic, personalized learning engine.
 
 ---
 
