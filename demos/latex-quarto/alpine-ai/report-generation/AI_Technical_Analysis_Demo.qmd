@@ -1,0 +1,258 @@
+---
+title: "AI-Assisted Technical Analysis"
+subtitle: "Demonstrating Advanced Document Generation with Quarto & LaTeX"
+author: "Mo Battah Technical Advisory"
+date: "August 19, 2025"
+format:
+  pdf:
+    documentclass: article
+    papersize: a4
+    margin-left: 1in
+    margin-right: 1in
+    margin-top: 1.25in
+    margin-bottom: 1.25in
+    fontsize: 11pt
+    linestretch: 1.15
+    fig-cap-location: bottom
+    tbl-cap-location: top
+    pdf-engine: xelatex
+    mainfont: "Times New Roman"
+    sansfont: "Helvetica Neue"
+    monofont: "Menlo"
+    linkcolor: blue
+    urlcolor: blue
+    citecolor: blue
+    geometry:
+      - margin=1in
+    include-in-header:
+      - text: |
+          \usepackage{fancyhdr}
+          \usepackage{lastpage}
+          \usepackage{xcolor}
+          \usepackage{tikz}
+          \usepackage{graphicx}
+          \usepackage{pgfplots}
+          \usepackage{geometry}
+          \usepackage{float}
+          \usepackage{caption}
+          \usetikzlibrary{positioning, fit, arrows.meta, shapes.arrows, calc, matrix}
+          \pgfplotsset{compat=1.17}
+          
+          % Define professional colors
+          \definecolor{primaryblue}{RGB}{0, 102, 204}
+          \definecolor{accentgold}{RGB}{255, 193, 7}
+          \definecolor{charcoal}{RGB}{54, 69, 79}
+          \definecolor{lightgray}{RGB}{248, 249, 250}
+          \definecolor{successgreen}{RGB}{40, 167, 69}
+          \definecolor{warningorange}{RGB}{255, 152, 0}
+          
+          % Custom title page
+          \renewcommand{\maketitle}{%
+            \begin{titlepage}
+              \newgeometry{margin=0in}
+              \pagecolor{white}
+              \begin{tikzpicture}[remember picture,overlay]
+                % Clean background
+                \fill[lightgray] (current page.north west) rectangle (current page.south east);
+                
+                % Top accent line
+                \fill[primaryblue] (current page.north west) rectangle ([yshift=-0.3cm]current page.north east);
+                
+                % Header
+                \node[text=charcoal, font=\fontsize{11}{13}\selectfont, anchor=west] 
+                  at ([xshift=2cm, yshift=-1.5cm]current page.north west) {MO BATTAH TECHNICAL ADVISORY};
+                \node[text=charcoal, font=\fontsize{9}{11}\selectfont, anchor=west] 
+                  at ([xshift=2cm, yshift=-1.8cm]current page.north west) {AI-POWERED ANALYSIS DEMONSTRATION};
+                
+                % Main title
+                \node[text=charcoal, font=\fontsize{24}{28}\selectfont\bfseries, text width=14cm, align=center] 
+                  at ([yshift=-5cm]current page.north) {AI-ASSISTED TECHNICAL\\ANALYSIS CAPABILITIES};
+                
+                % Separator
+                \draw[primaryblue, line width=2pt] ([xshift=3cm, yshift=-6cm]current page.north west) -- ([xshift=-3cm, yshift=-6cm]current page.north east);
+                
+                % Subtitle
+                \node[text=charcoal, font=\fontsize{18}{22}\selectfont, text width=14cm, align=center] 
+                  at ([yshift=-7cm]current page.north) {Demonstrating Quarto + LaTeX Integration};
+                
+                % Highlight box
+                \fill[primaryblue!12] ([xshift=2cm, yshift=-9cm]current page.north west) rectangle ([xshift=-2cm, yshift=-10.5cm]current page.north east);
+                \draw[primaryblue, line width=2pt] ([xshift=2cm, yshift=-9cm]current page.north west) rectangle ([xshift=-2cm, yshift=-10.5cm]current page.north east);
+                \node[text=charcoal, font=\fontsize{12}{14}\selectfont\bfseries, text width=12cm, align=center] 
+                  at ([yshift=-9.75cm]current page.north) {PROFESSIONAL DOCUMENT GENERATION\\WITH AI ASSISTANCE};
+                
+                % Footer
+                \fill[charcoal] ([yshift=3cm]current page.south west) rectangle ([yshift=2.3cm]current page.south east);
+                \node[text=white, font=\fontsize{14}{16}\selectfont\bfseries, anchor=center] 
+                  at ([yshift=2.65cm]current page.south) {August 19, 2025};
+                
+                % Corner accents
+                \fill[accentgold] ([xshift=-0.4cm]current page.north east) rectangle ([xshift=0cm, yshift=-3cm]current page.north east);
+                \fill[accentgold] ([yshift=0.4cm]current page.south west) rectangle ([xshift=3cm]current page.south west);
+                
+                % Branding
+                \node[text=primaryblue, font=\fontsize{16}{18}\selectfont\bfseries, anchor=east] 
+                  at ([xshift=-2.5cm, yshift=1.3cm]current page.south east) {BATTAH};
+                \node[text=charcoal, font=\fontsize{8}{10}\selectfont, anchor=east, opacity=0.7] 
+                  at ([xshift=-2.5cm, yshift=0.8cm]current page.south east) {Demo Document \& Presentation};
+              \end{tikzpicture}
+              \restoregeometry
+            \end{titlepage}
+            \pagecolor{white}
+          }
+          
+          % Headers/footers
+          \pagestyle{fancy}
+          \fancyhf{}
+          \fancyhead[L]{\small\textcolor{charcoal}{MO BATTAH TECHNICAL ADVISORY}}
+          \fancyhead[R]{\small\textcolor{charcoal}{AI DEMO}}
+          \fancyfoot[C]{\small\textcolor{charcoal}{Page \thepage\ of \pageref{LastPage}}}
+          \renewcommand{\headrulewidth}{0.5pt}
+          \renewcommand{\headrule}{\color{primaryblue}\hrule width\headwidth height\headrulewidth \vskip-\headrulewidth}
+          \renewcommand{\footrulewidth}{0.5pt}
+          \renewcommand{\footrule}{\color{primaryblue}\hrule width\headwidth height\footrulewidth \vskip-\footrulewidth}
+toc: true
+toc-depth: 2
+number-sections: true
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+\newpage
+
+# Executive Summary {.unnumbered}
+
+This demonstration showcases the power of combining AI assistance with professional document generation tools. Using Quarto and LaTeX, we can create publication-quality technical documents with sophisticated formatting, custom branding, and advanced visual elements.
+
+**Key Capabilities Demonstrated:**
+
+- **Professional Typography:** Custom fonts, spacing, and layout using XeLaTeX
+- **Advanced Graphics:** TikZ diagrams and visualizations embedded directly in documents  
+- **Custom Branding:** Corporate color schemes and professional styling
+- **Automated Generation:** AI-assisted content creation with consistent formatting
+
+\newpage
+
+# Technology Stack Visualization
+
+## Architecture Overview
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[font=\sffamily\small]
+    \tikzset{
+        component/.style={draw=primaryblue, fill=primaryblue!10, rounded corners, minimum height=1.2cm, text width=3cm, align=center, inner sep=8pt},
+        aibox/.style={draw=successgreen, fill=successgreen!10, rounded corners, minimum height=1.2cm, text width=3cm, align=center, inner sep=8pt},
+        arrow/.style={->, line width=2pt, primaryblue}
+    }
+
+    % AI Layer
+    \node[aibox] at (0, 4) {\textbf{AI Assistant}\\Claude/GPT-4};
+    \node[aibox] at (4, 4) {\textbf{Content Generation}\\Research \& Analysis};
+    
+    % Document Layer  
+    \node[component] at (0, 2) {\textbf{Quarto}\\Markdown + Code};
+    \node[component] at (4, 2) {\textbf{LaTeX}\\Professional Typesetting};
+    
+    % Output Layer
+    \node[component] at (2, 0) {\textbf{PDF Output}\\Publication Quality};
+    
+    % Connections
+    \draw[arrow] (0, 3.4) -- (0, 2.6);
+    \draw[arrow] (4, 3.4) -- (4, 2.6);
+    \draw[arrow] (0.7, 1.4) -- (1.3, 0.6);
+    \draw[arrow] (3.3, 1.4) -- (2.7, 0.6);
+    
+    % Labels
+    \node[above, font=\footnotesize\bfseries] at (2, 4.8) {AI-Powered Content Creation};
+    \node[above, font=\footnotesize\bfseries] at (2, 2.8) {Document Processing Pipeline};
+    \node[below, font=\footnotesize\bfseries] at (2, -0.8) {Professional Output};
+
+\end{tikzpicture}
+\caption{AI-assisted document generation workflow demonstrating the integration of content creation, processing, and professional formatting.}
+\end{figure}
+
+# Process Demonstration
+
+## Workflow Comparison
+
+| Traditional Approach | AI-Enhanced Approach | Improvement |
+|:-------------------|:--------------------|:-----------|
+| **Manual Research** | AI-assisted data gathering | 5x faster |
+| **Word Processing** | Quarto + LaTeX integration | Professional typography |
+| **Static Charts** | TikZ programmatic diagrams | Dynamic visualizations |
+| **Template Reuse** | Automated style consistency | Zero manual formatting |
+
+## Live Demo Capabilities
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[font=\sffamily\footnotesize]
+    % Timeline
+    \draw[thick] (0,0) -- (10,0);
+    \foreach \x/\label in {0/Start, 2.5/Research, 5/Draft, 7.5/Format, 10/Finish} {
+        \draw[thick] (\x,0.1) -- (\x,-0.1) node[below] {\label};
+    }
+    
+    % Traditional workflow
+    \node[above, font=\footnotesize\bfseries] at (5, 1.5) {Traditional vs AI-Enhanced Workflow};
+    \draw[warningorange, line width=3pt] (0, 1) -- (10, 1);
+    \node[left, font=\footnotesize] at (-0.2, 1) {Traditional};
+    
+    % AI workflow  
+    \draw[successgreen, line width=3pt] (0, 0.5) -- (3, 0.5);
+    \node[left, font=\footnotesize] at (-0.2, 0.5) {AI-Enhanced};
+    
+    % Time savings annotation
+    \draw[accentgold, line width=2pt, <->] (3, 0.3) -- (10, 0.3);
+    \node[above, font=\footnotesize\bfseries, text=accentgold] at (6.5, 0.8) {70\% Time Savings};
+
+\end{tikzpicture}
+\caption{Workflow efficiency comparison showing dramatic time savings with AI assistance.}
+\end{figure}
+
+\newpage
+
+# Technical Implementation
+
+## Document Features
+
+This demonstration document includes:
+
+- **Custom LaTeX Styling:** Professional color schemes and typography
+- **TikZ Graphics:** Programmatically generated diagrams and charts  
+- **Responsive Tables:** Automatically formatted data presentation
+- **Cross-References:** Automated figure and section numbering
+- **Professional Branding:** Consistent corporate identity
+
+## Build Process
+
+The entire document can be generated with a single command:
+
+```bash
+quarto render AI_Technical_Analysis_Demo.qmd
+```
+
+This demonstrates the power of automated, reproducible document generation that maintains professional quality while dramatically reducing production time.
+
+# Presentation Impact
+
+## Value Proposition
+
+**For Technical Consulting:**
+- Rapid report generation with professional quality
+- Consistent branding across all deliverables  
+- Complex visualizations without design overhead
+- Reproducible, version-controlled documentation
+
+**For Client Engagement:**
+- Professional presentation materials
+- Technical accuracy with visual appeal
+- Quick turnaround on analysis requests
+- Scalable document production
+
+---
+
+*This demonstration showcases how AI assistance transforms technical document creation from a time-intensive manual process into an efficient, automated workflow that produces publication-quality results.*
