@@ -8,6 +8,16 @@ The core philosophy behind this collection is to move beyond theoretical underst
 
 ## Repository Structure and Contents
 
+### Live Demos (PDF Outputs)
+
+To quickly see the value and output quality of this repository, you can directly view some of the generated PDF documents:
+
+*   **AI Technical Analysis Demo Report**: [View PDF](demos/latex-quarto/alpine-ai/report-generation/output/AI_Technical_Analysis_Demo.pdf)
+*   **AI Consultant Resume Sample**: [View PDF](demos/latex-quarto/alpine-ai/resume-system/outputs/ai-consultant/ai-consultant-resume.pdf)
+*   **Tech Leadership Resume Sample**: [View PDF](demos/latex-quarto/alpine-ai/resume-system/outputs/tech-leadership/tech-leadership-resume.pdf)
+
+
+
 This collection is organized into two primary sections: `demos` and `prompts`, each containing specialized examples.
 
 ### `demos/`
