@@ -2,11 +2,11 @@ project:
   type: website
 
 website:
-  title: "presentation"
+  title: "The Asymmetric Bet: AI for Engineering and Enterprise"
   navbar:
     left:
       - href: index.qmd
-        text: Home
+        text: Presentation
       - about.qmd
 
 format:
@@ -14,6 +14,20 @@ format:
     theme: [default, custom.scss]
     css: styles.css
     toc: true
+    slide-number: true
+    show-slide-number: all
+    transition: slide
+    background-transition: fade
+    controls: true
+    progress: true
+    center: true
+    touch: true
+    keyboard: true
+    overview: true
+    help: true
+    auto-animate: true
+    fragments: true
+    embed-resources: true
 
 
 
