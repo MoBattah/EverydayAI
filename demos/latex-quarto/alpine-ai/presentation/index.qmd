@@ -1,23 +1,122 @@
 ---
-title: "My Awesome Presentation"
+title: "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise"
 format: revealjs
 ---
 
-# Introduction
+# Commandments for this Presentation
 
-This is the first slide of my presentation.
+1.  **Raise your hands!** Your contributions are more important than my content, and we *will* finish my content anyway. I will
+auto-manage our time.
+2.  **Clarify and Correct:** In this rapidly advancing world of AI, words can have multiple meanings. If I say something that
+sounds wrong, needs clarification, or is out of date, please correct me. Share your stories or complimentary information. This is
+a place where everyone has something to contribute; there are no know-it-alls, only learn-it-alls. Our diverse audience from private
+equity portfolio companies means diverse experiences, which is a good thing.
 
-## Section 1
+## Session Guidelines & Opening Questions
 
-- Point 1
-- Point 2
+- This is a discussion—jump in via chat or hand raise.
+- How will the Software Development Life Cycle change when every engineer is 10x more productive but not 10x more knowledgeable?
+- How is QA evolving? Are developers spending more time reading and prompting than writing code?
+- Does AI change the ratio of developers to PMs or QA?
 
-## Section 2
+## My Essential AI Tools
 
-This is another slide.
+This section details the key tools that power my AI workflow.
+
+## Tool Deep Dive: Wispr Flow (Voice Dictation)
+
+*   **Primary Use:** Voice-to-text dictation across platforms (phone, text messages, emails, AI interaction).
+*   **Volume:** Dictating over 100,000 words per month, potentially nearing 200,000.
+*   **Workflow:** Preferred method for interacting with AI. Dictate thoughts, AI structures them. Enables efficient message management (e.g., while walking).
+*   **AI Interaction:** Voice-to-text input, text output from AI. Avoids voice-to-voice due to reduced AI content output.
+
+## Tool Deep Dive: Agentic Coding
+
+*   **Highest Abstraction:** Claude Code (pioneer, model context protocol creator)
+*   **Secondary:** Gemini CLI (for tasks not consuming Claude usage, due to hitting Claude limits easily)
+*   **Less Agency:** Roo (not currently relevant for your software engineering level)
+
+## Tool Deep Dive: Context Storage and Management (Crucial)
+
+*   **Method:** Massive GitHub repository storing context layers in Markdown files.
+*   **Why Markdown:** AI prefers Markdown; aesthetically pleasing and integrates well with Quarto.
+*   **Types of Context:** Career feelings, emotions, project goals, business insights, client/customer information, problem definitions.
+*   **Avoid:** Storing context directly with foundation model providers.
+
+## Tool Deep Dive: Other Tools
+
+*   Willow
+*   Hypernote
+*   (Your own custom solution - mention its complexity for cross-platform/feature sets)
+
+# Part 1: The New Mental Model
+
+## Over-Index on AI – It's an Asymmetric Bet
+
+- $20/month tools can unlock outsized ROI.
+- Anecdotes:
+  - Job search: ~$50 investment leading to a ~$40k salary increase.
+  - $200 cloud credit enabling significant business value.
+
+## Augmentation, Not Abdication
+
+- AI augments judgment; it doesn't replace it.
+- Technical due diligence: AI probes deeper, but humans make the final call.
+- If a task can be automated, find the next, more valuable task.
+
+# Part 2: The Practitioner's Toolkit
+
+## The Ladder of Abstraction: From Prompting to Partnership
+
+### Level 1: Conversational AI
+
+- ChatGPT, Claude and similar tools as baseline assistants.
+
+### Level 2: Integrated Assistants (IDE Extensions)
+
+- Cursor, Roo, and similar VS Code extensions.
+- They read codebases, propose plans, and modify code with approval.
+
+### Level 3: Agentic Partners (CLI Tools)
+
+- Claude Code, Gemini CLI, Codex and others.
+- Operate within the terminal, execute scripts, and manage files.
+- Example: organizing a downloads folder or processing `.eml` email files.
+
+## Workflow: Knowledge Pipeline (Quarto & LaTeX)
+
+- Write in Markdown; render beautiful PDFs.
+- Reuse templates for SOWs, reports, and a flexible resume system.
+
+## Workflow: Information Edge
+
+- Export LinkedIn data and query it far beyond the UI.
+- "Deep research" prompts create rich briefings for meetings.
+
+## Workflow: Personal Augment (Vocabulary Builder)
+
+- Inspired by *Word Power Made Easy*.
+- Feed transcripts or documents to learn new words at the edge of your vocabulary.
 
 ## AI in Action: Folder Structure
 
-Here's an example of how AI helps organize my folder structure.
-
 ![AI Folder Structure](images/ai-folder-structure-organization.png)
+
+# Part 3: The Broader Implications
+
+## AI as a Deflationary Force
+
+- Skydio drones inspecting power lines.
+- Gecko Robotics monitoring infrastructure.
+- Improved efficiency in the physical world lowers costs for everyone.
+
+## Beware of "Vibe Coding"
+
+- Productivity isn't a substitute for foundational systems knowledge.
+- Example: choosing NoSQL when a relational database is required.
+
+# Conclusion & Discussion
+
+- Revisit the opening questions.
+- What shifts do you see in your teams and workflows?
+- Let's talk.
