@@ -1,0 +1,59 @@
+                                                   Jane Smith
+                               VP, Engineering | AI-Enhanced Technical Leadership
+               jane.smith@example.com ⋄ (555) 123-4567 ⋄ LinkedIn.com/in/janesmith ⋄ janesmith.dev
+
+Professional Summary
+Technology executive with 12+ years driving digital transformation and team excellence. Led engineering organizations
+scaling from 10 to 150+ engineers while delivering $50M+ in incremental revenue. Expert in AI integration, cloud
+architecture, and high-performance team building. Proven track record of transforming traditional development processes
+through automation and AI-assisted workflows, reducing delivery time by 60% while improving quality metrics.
+
+Professional Experience
+VP, Engineering                                                                                          Jan 2020 – Present
+TechCorp Solutions | Scaling SaaS Platform                                                               San Francisco, CA
+   ◦ Led engineering organization from 25 to 120+ engineers across 8 product teams, supporting 300% revenue growth to
+     $45M ARR
+   ◦ Implemented AI-assisted development workflows reducing code review time by 50% and deployment frequency by
+     3x
+   ◦ Architected cloud-native platform serving 2M+ users with 99.9% uptime and sub-200ms response times
+   ◦ Built comprehensive technical documentation system using AI automation, improving onboarding time by 65%
+   ◦ Established data-driven engineering culture with KPIs resulting in 40% improvement in delivery predictability
+CTO & Co-Founder                                                                                       Jun 2015 – Feb 2018
+DataFlow Analytics | AI-Powered Business Intelligence                                                            Austin, TX
+   ◦ Co-founded and led technical development of AI analytics platform, scaling to $8M ARR and 50+ enterprise clients
+   ◦ Built engineering team from 0 to 25 developers, establishing agile processes and technical standards
+   ◦ Architected machine learning pipeline processing 500GB+ daily data with real-time insights for Fortune 1000 clients
+   ◦ Implemented automated testing and deployment systems achieving 99.5% uptime during hypergrowth phase
+   ◦ Successfully exited via acquisition by TechCorp Solutions, leading technical integration and team transition
+Principal AI & Technology Consultant                                                                  Mar 2018 – Dec 2019
+Independent Practice | Technical Advisory                                                                           Remote
+   ◦ Advised 15+ technology companies on AI integration strategies, resulting in average 45% efficiency gains
+   ◦ Developed automated technical due diligence framework using AI-assisted analysis, reducing engagement time from
+     3 weeks to 5 days
+   ◦ Created professional document generation systems combining AI content creation with LaTeX typography
+   ◦ Led digital transformation initiatives for mid-market companies, implementing modern development practices and
+     CI/CD pipelines
+   ◦ Built custom AI workflow solutions for technical documentation, code review automation, and requirement analysis
+
+Education
+Master of Science in Computer Science                                                                                2013
+Stanford University | AI Specialization                                                                      Stanford, CA
+Bachelor of Science in Engineering                                                                                   2011
+University of California, Berkeley | Magna Cum Laude                                                         Berkeley, CA
+
+Certifications & Professional Development
+AWS Solutions Architect Professional - Advanced cloud architecture and enterprise solutions
+Certified Kubernetes Administrator - Container orchestration and cloud-native development
+AI/ML Leadership Certificate - Stanford Continuing Studies, focus on enterprise AI implementation
+Leadership Competencies
+Team Building & Scaling: Led engineering organizations from 10 to 150+ members, implementing mentorship programs
+and career development frameworks
+Strategic Planning: Developed 3-year technical roadmaps aligning engineering priorities with business objectives and
+market opportunities
+Cross-Functional Collaboration: Built strong partnerships with Product, Sales, and Executive teams, improving feature
+delivery speed by 40%
+Change Management: Successfully led digital transformation initiatives, including AI adoption and cloud migration for
+traditional organizations
+Performance Optimization: Established engineering KPIs and metrics-driven culture, resulting in measurable
+improvements in delivery predictability
+
