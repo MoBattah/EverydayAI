@@ -1,6 +1,6 @@
 # AI + Quarto/LaTeX Demo Project
 
-This project demonstrates professional document generation using AI assistance, Quarto, and LaTeX for Mo Battah's AI presentation.
+This project demonstrates professional document generation using AI assistance, Quarto, and LaTeX.
 
 ## 🚀 Quick Start
 
