@@ -3,26 +3,7 @@ title: "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise"
 subtitle: "Alpine Investors & Portfolio Companies"
 author: "Mo Battah"
 date: "2025-08-20"
-format: 
-  revealjs:
-    theme: [default, custom.scss]
-    css: styles.css
-    toc: true
-    slide-number: true
-    show-slide-number: all
-    hash-type: number
-    transition: slide
-    background-transition: fade
-    controls: true
-    progress: true
-    center: true
-    touch: true
-    keyboard: true
-    overview: true
-    help: true
-    auto-animate: true
-    fragments: true
-    embed-resources: true
+institute: ""
 ---
 
 # Commandments for this Presentation
@@ -123,10 +104,17 @@ This section details the key tools that power my AI workflow.
 
 ---
 
-## Workflow: Knowledge Pipeline (Quarto & LaTeX)
+## Workflow: Modular Resume System
 
-- Write in Markdown; render beautiful PDFs.
-- Reuse templates for SOWs, reports, and a flexible resume system.
+**The Architecture**: Extensible LaTeX system built on source-of-truth data (experience, skills, biographical info). Modularly build targeted resumes for different companies, industries, and roles.
+
+**Multi-Format Output**: Generates both PDF (for humans) and .txt (for Applicant Tracking Systems) from the same source.
+
+**AI-Powered Customization**: Need an Amazon-specific resume but don't have Amazon context? Claude Code can build that variant in 10-20 minutes, speaking Amazon's specific language and expectations.
+
+**Competitive Advantage**: 5-10 minutes of work puts you ahead of 90% of candidates who send generic resumes.
+
+**Available in This Repository**: Fully adaptable system anyone can use for their own targeted job applications.
 
 ---
 
@@ -139,8 +127,8 @@ This section details the key tools that power my AI workflow.
 
 ## AI in Action: Automatic LinkedIn CRM
 
-::: {.r-fit-text}
 **The Complete Workflow:**
+
 - **Input Flexibility:** CSV export, screenshot, or simple copy-paste of LinkedIn connections
 - **Deep AI Research:** Claude Code investigates each person's background, current role, and company context
 - **Context Layer Integration:** Cross-references against my personal context (career goals, business challenges, opportunities)
@@ -150,9 +138,8 @@ This section details the key tools that power my AI workflow.
 **Key Insight:** This transforms passive networking into active relationship strategy. Instead of hoping to remember who someone is months later, AI creates a living database that understands *why* each connection matters to your specific goals.
 
 **The Context Layer Dependency:** This only works because I maintain detailed context files in GitHub—my career aspirations, current projects, industry focus areas. Without this foundation, AI can't make meaningful connections.
-:::
 
-![](images/automatic-crm-via-linkedin-data.png){.r-stretch}
+![](images/automatic-crm-via-linkedin-data.png){width=90%}
 
 ---
 
@@ -165,9 +152,34 @@ This section details the key tools that power my AI workflow.
 
 ---
 
+## Workflow: Transcript Analysis for Personal Growth
+
+**The Foundation**: Record calls with clients, customers, partners, and colleagues (with consent). These transcripts are my most valuable daily information asset for self-improvement.
+
+**AI-Powered Self-Analysis Questions**:
+- What books can I read to improve my communication?
+- Where are my gaps in my communication skill set?
+- What is the sentiment analysis of this call?
+- Where can I improve? Did I miss anything important?
+- What should I talk to this person about next?
+- What's your read on the situation?
+- How can I improve my executive presence, voice, vocabulary?
+- Am I being empathetic? How could I have handled this meeting better?
+- Rate each person's meeting performance.
+
+**Negotiation Analysis**: Record negotiations with customers, clients, business partners, or potential employers. AI revealed my tendency to be overly accommodative, conceding too early and devaluing my negotiating position—inviting others to take advantage. Some here know this is my greatest weakness; I'm actively working on it with AI's help.
+
+**The Confidence Factor**: AI often highlights strengths I take for granted. When AI rates both participants without knowing who I am, the objective feedback is invaluable. Example: After a difficult conversation with unexpected information that changed a relationship, AI confirmed I handled it incredibly well and that the timing was inappropriate—the information should have been shared earlier. This validation helped me recognize I wasn't giving myself enough credit.
+
+**Why This Matters**: AI provides crucial gut checks, especially for those who struggle with self-advocacy. Common in tech due to impostor syndrome—we often don't put our interests first or advocate for ourselves effectively.
+
+**Results**: AI recommendations have led to targeted book selections and measurable improvements in communication and negotiation strategy.
+
+---
+
 ## AI in Action: Folder Structure
 
-![AI Folder Structure](images/ai-folder-structure-organization.png)
+![AI Folder Structure](images/ai-folder-structure-organization.png){width=90%}
 
 ---
 
