@@ -1,19 +1,38 @@
 ---
-title: "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise"
+title: "Automating the Mundane, Building the Monumental: A Practitioner's System for AI-Driven Engineering"
 subtitle: "Alpine Investors & Portfolio Companies"
 author: "Mo Battah"
 date: "2025-08-20"
-institute: ""
----
-
-# Commandments for this Presentation
-
-1.  **Raise your hands!** Your contributions are more important than my content, and we *will* finish my content anyway. I will auto-manage our time.
-2.  **Clarify and Correct:** In this rapidly advancing world of AI, words can have multiple meanings. If I say something that sounds wrong, needs clarification, or is out of date, please correct me. Share your stories or complimentary information. This is a place where everyone has something to contribute; there are no know-it-alls, only learn-it-alls. Our diverse audience from private equity portfolio companies means diverse experiences, which is a good thing.
 
 ---
 
-## Session Guidelines & Opening Questions
+# **Title Slide**
+
+**Automating the Mundane, Building the Monumental: A Practitioner's System for AI-Driven Engineering**
+
+Presented by: Mo Battah  
+Audience: Alpine Investors & Portfolio Companies  
+Date: 08/20/2025  
+Link to Open Source Repo: [Link to your Git Repository]
+
+---
+
+# **Part 1: The Philosophy (The "Why")**
+
+## **A. Introduction: Speaking Peer-to-Peer**
+
+**My Background:** Briefly, as a builder who has faced the same challenges you do—the sprint that gets derailed by unplanned work, the legacy code no one wants to touch, the documentation that's perpetually out of date.
+
+**Refined Narrative:** "AI isn't about replacing us; it's about automating the mundane so we can focus on the monumental. It's about eliminating the friction that slows us down. I'm not here to show you a theoretical future or a slick product demo; I'm here to demonstrate a set of practical, interconnected systems I've built and use every single day—systems you can adapt for your own work tomorrow."
+
+### Opening Questions (Delivered with the tone of a senior engineer):
+- "How many of you are bogged down by process? By the endless meetings, tickets, and status updates that get in the way of actual building?"
+- "How much of your sprint is spent writing boilerplate, wrestling with config files, or deciphering legacy code, instead of solving the hard, interesting problems you were hired for?"
+- "What if we could automate the boring, repetitive, and frustrating parts of our jobs to free ourselves up for the truly innovative work that moves the needle?"
+
+### Session Guidelines
+1. **Raise your hands!** Your contributions are more important than my content, and we *will* finish my content anyway. I will auto-manage our time.
+2. **Clarify and Correct:** In this rapidly advancing world of AI, words can have multiple meanings. If I say something that sounds wrong, needs clarification, or is out of date, please correct me. Share your stories or complimentary information. This is a place where everyone has something to contribute; there are no know-it-alls, only learn-it-alls. Our diverse audience from private equity portfolio companies means diverse experiences, which is a good thing.
 
 - This is a discussion—jump in via chat or hand raise.
 - How will the Software Development Life Cycle change when every engineer is 10x more productive but not 10x more knowledgeable?
@@ -22,56 +41,11 @@ institute: ""
 
 ---
 
-## My Essential AI Tools
+## **B. Core Principle: Augmentation, Not Abdication**
 
-This section details the key tools that power my AI workflow.
+**Core Message:** This is not about blindly trusting AI or outsourcing our thinking. It's about a fundamental shift in our role, moving from a "doer" to an "architect." It's a new, more leveraged form of engineering leadership where we define the problem, design the solution, and act as the ultimate verifiers of quality.
 
-### Tool Deep Dive: Wispr Flow (Voice Dictation)
-
-*   **Primary Use:** Voice-to-text dictation across platforms (phone, text messages, emails, AI interaction).
-*   **Volume:** Dictating over 100,000 words per month, potentially nearing 200,000.
-*   **Workflow:** Preferred method for interacting with AI. Dictate thoughts, AI structures them. Enables efficient message management (e.g., while walking).
-*   **AI Interaction:** Voice-to-text input, text output from AI. Avoids voice-to-voice due to reduced AI content output.
-
----
-
-### Tool Deep Dive: Agentic Coding
-
-*   **Highest Abstraction:** Claude Code (pioneer, model context protocol creator)
-*   **Secondary:** Gemini CLI (for tasks not consuming Claude usage, due to hitting Claude limits easily)
-*   **Less Agency:** Roo (not currently relevant for your software engineering level)
-
----
-
-### Tool Deep Dive: Context Storage and Management (Crucial)
-
-*   **Method:** Massive GitHub repository storing context layers in Markdown files.
-*   **Why Markdown:** AI prefers Markdown; aesthetically pleasing and integrates well with Quarto.
-*   **Types of Context:** Career feelings, emotions, project goals, business insights, client/customer information, problem definitions.
-*   **Avoid:** Storing context directly with foundation model providers.
-
----
-
-### Tool Deep Dive: Other Tools
-
-*   Willow
-*   Hypernote
-*   (Your own custom solution - mention its complexity for cross-platform/feature sets)
-
----
-
-# Part 1: The New Mental Model
-
-## Over-Index on AI – It's an Asymmetric Bet
-
-- $20/month tools can unlock outsized ROI.
-- Anecdotes:
-  - Job search: ~$50 investment leading to a ~$40k salary increase.
-  - $200 cloud credit enabling significant business value.
-
----
-
-## Augmentation, Not Abdication
+**The Key Axiom:** "If a task can be fully automated to a satisfactory degree, our job is to find the next, more valuable task up the chain. We use AI to augment our judgment, not replace it. The goal is to operate at a higher level of abstraction."
 
 - AI augments judgment; it doesn't replace it.
 - Technical due diligence: AI probes deeper, but humans make the final call.
@@ -79,32 +53,100 @@ This section details the key tools that power my AI workflow.
 
 ---
 
-# Part 2: The Practitioner's Toolkit
+# **Part 2: The Practitioner's Stack (The "How")**
 
-## The Ladder of Abstraction: From Prompting to Partnership
+## **A. My Stack for Leverage: A System for Context Engineering**
 
-### Level 1: Conversational AI
+*(Pitch: This isn't a random collection of tools; it's a deliberate, three-stage pipeline for manufacturing perfect, context-rich prompts. High-quality output requires high-quality input, and this is the system I use to create it.)*
 
-- ChatGPT, Claude and similar tools as baseline assistants.
+### **Stage 1: Context Creation (Wispr Flow)**
+
+**Pitch:** "The entire process starts with high-bandwidth thought capture. Keyboards are a bottleneck. Wispr Flow is my primary interface for turning unstructured verbal brainstorming into structured, AI-ready text. Your thoughts, verbalized in real-time, become a digital asset—the raw material for the entire AI workflow."
+
+**Application:** "This is foundational. I use it for everything from drafting emails to capturing real-time thoughts while walking through a house, or more importantly, talking through a complex systems design and architecture problem. The output is a repository of authentic, high-fidelity text that becomes our initial, unvarnished context."
+
+- **Primary Use**: High-volume voice dictation for everything from messages to AI prompts.
+- **Volume**: ~100K words/month.
+- **Key Workflow**: Dictate raw thoughts, let AI structure them. This is my primary interface for compute interaction (including AI).
+- **Alternatives**: Willow, Hypernote (I use Wispr Flow since it was first to market, no reason to switch)
+
+### **Stage 2: Context Refinement & Enrichment (Agentic Partners)**
+
+**Pitch:** "Raw text is just a starting point. The next step is to refine and structure it. I use agentic partners like Claude Code and Gemini CLI as infinitely patient junior developers. They take the raw context from Wispr, organize it, enrich it with research, and build it into a more robust, analytical document that is ready for complex queries."
+
+**Application:** "For that house tour, the agent transforms my rambling notes into a structured pros/cons list and researches neighborhood comps and school ratings. For a coding problem, it converts my verbal stream-of-consciousness into a preliminary bug report, complete with code snippets and a list of potential root causes."
+
+- **Primary**: Claude Code (the pioneer in this space).
+- **Secondary**: Gemini CLI (excellent for tasks when Claude usage is high).
+- **Others**: Tools like Roo exist but offer less agency for advanced software engineering.
+
+### **Stage 3: Context Assembly & Orchestration (Prompt Tower)**
+
+**Pitch:** "This is the final and most powerful step where we achieve insurmountable leverage. Prompt Tower is the ultimate context assembler. It takes all the disparate pieces of context we've created and refined—the Wispr transcripts, the agent-generated reports, relevant code files, API documentation, meeting notes—and allows me to orchestrate the perfect, holistic prompt."
+
+**Application:** "For strategic call preparation—my most common use case—I select all past call transcripts, a flattened file of our email history, and a natural-language 'status' file that captures the nuances of the relationship that a tool like Monday.com can't. My prompt is then simple: 'Based on all this, what are my next steps? And critically, what potential dissatisfactions do I need to surface and address?' For the house purchase, I can select the refined reports for three properties, add a context file with my financial data, and another with my family's requirements. For a software engineering problem, I can select the bug report, the relevant codebase files, and transcripts from team calls discussing the issue. Prompt Tower assembles all of this into one massive, perfectly-formed prompt that gives the AI a complete, 360-degree view of the problem, enabling it to provide a deeply insightful and immediately useful solution. Typically, these prompts end up in Gemini because of their 1 million token context. My submissions are typically north of 100,000 tokens."
+
+**What It Is**: VSCode extension that creates massive context windows from selected files with custom prompt prefixes/suffixes.
+
+**The Workflow**: 
+1. Select relevant files (transcripts, emails, reports, context files)
+2. Add prompt prefix and suffix 
+3. Click "Create" → copies to clipboard → paste into Gemini (only model handling >100K tokens consistently)
+
+**Daily Use Cases**:
+- **Pre-call prep**: Select transcripts from previous conversations, ask "Where are we? What should I discuss?"
+- **Client analysis**: Merge all emails with a client + recent call transcripts + LaTeX reports
+- **Context queries**: Select markdown context files, query for insights
+
+**Why It Works for Me**: Everything is in markdown/LaTeX in my codebase. No tool calls needed, no separate platforms to pay for, instant access to massive context.
+
+**Prompt Engineering Laboratory**: One-click context file switching makes A/B testing effortless. The prefix/suffix feature lets you sandwich context between instructions.
+
+**Example Workflow**: Set prefix to "This is prompt engineering improvement. Improve this prompt based on this context." Change which context files are included with a click. Test variations rapidly.
+
+**Economic Hack**: With Gemini's flat consumer fee, you can "abuse" the system with many requests to iterate and optimize prompts without per-token costs. I do this constantly.
+
+**Getting Transcripts is Easier Than You Think**: Most corporate calls are already recorded. Use Google AI Studio (currently free) to transcribe voice memos, recordings, or exported call audio into markdown format.
+
+**Caveat**: You have to care enough about something to create markdown files and maintain them in a codebase. This level of systematization isn't for everyone.
+
+### **Context Storage & Management**
+- **Method**: A large, private GitHub repository serves as my "second brain," with context stored in Markdown files.
+- **Why Markdown?**: AI understands it natively, it's easy to read, and it integrates perfectly with Quarto.
+- **Context Examples**: Project goals, business insights, client data, personal career strategy, and even emotional state.
+- **Crucial Rule**: Never store your context directly with foundation model providers. Own your data.
+
+### **Voice Recording for Major Life Decisions**
+
+**The Problem**: When apartment hunting, house shopping, or evaluating expensive services (home repairs, contractors), it's impossible to remember your detailed thoughts across multiple options.
+
+**The Solution**: 
+1. **During tours**: Use Wispr Flow or Voice Memos while walking through properties
+2. **Talk through everything**: Layout thoughts, pros/cons, gut reactions, specific observations
+3. **Later at home**: Transcribe with Google AI Studio (free)
+4. **AI analysis**: Feed all transcripts to AI for comparative analysis and decision support
+
+**Why Voice Memos Works**: Built-in consent (announces recording), ensures you capture honest real-time reactions rather than trying to reconstruct thoughts later.
+
+**Universal Application**: This works for any scenario where you're evaluating multiple complex options over time - contractors, schools, medical consultations, vendor evaluations.
+
+**Beyond Evaluation - Problem Solving**: Use voice memos when facing big work problems during walks or hikes (even with no reception). Later transcribe and have AI clean up the recording into markdown files for your codebase.
+
+**The Core Insight**: Talking out loud = thinking out loud. Voice recording transforms stream-of-consciousness problem-solving into AI-ready context that becomes part of your searchable knowledge base.
+
+**Result**: Better decision-making through systematic capture and AI-assisted analysis of your own insights.
 
 ---
 
-### Level 2: Integrated Assistants (IDE Extensions)
+## **B. The Demos: Primitives for Building Systems**
 
-- Cursor, Roo, and similar VS Code extensions.
-- They read codebases, propose plans, and modify code with approval.
+*(Goal: Present your demos as case studies in applying engineering principles to automate toil.)*
 
----
+### **Demo 1: The Modular Resume System (A Case Study in "Documentation as Code")**
 
-### Level 3: Agentic Partners (CLI Tools)
+**The Pitch:** "We all hate updating documentation because it's manual, repetitive, and prone to error. I applied a software engineering mindset to a classic business problem: the resume. This is a system built on modular, version-controlled components—our single source of truth—which are then assembled by templates and automated with build scripts. The result is publication-quality, ATS-optimized, and role-specific outputs generated on the fly."
 
-- Claude Code, Gemini CLI, Codex and others.
-- Operate within the terminal, execute scripts, and manage files.
-- Example: organizing a downloads folder or processing `.eml` email files.
-
----
-
-## Workflow: Modular Resume System
+**The Connection:** "This is a powerful principle. Now, imagine applying it to your team's technical documentation, API specs, or customer-facing reports. We can stop manually writing docs and start generating them from the source, ensuring they are always accurate and up-to-date. This is how we solve the documentation problem for good."
 
 **The Architecture**: Extensible LaTeX system built on source-of-truth data (experience, skills, biographical info). Modularly build targeted resumes for different companies, industries, and roles.
 
@@ -118,58 +160,21 @@ This section details the key tools that power my AI workflow.
 
 ---
 
-## Workflow: AI-Powered Career Strategy
+### **Demo 2: AI-Assisted Technical Analysis (Automating the "Last Mile")**
 
-**The Odyssey Plan Exercise**: Feed your resume into Gemini (million-token context) and ask for three career trajectories:
-1. **Continue Current Path** - Natural progression from where you are
-2. **Pivot Path** - Different direction using existing skills  
-3. **Wild Card Path** - Completely unexpected possibilities
+**The Pitch:** "This demonstrates the output of such a system, automating the final, painful step of presentation. It combines AI-driven content generation with the typographic precision of LaTeX. Notice the programmatically generated TikZ diagrams—no more struggling with Visio or Lucidchart. This entire professional-grade report was rendered from simple Markdown files with a single command: quarto render."
 
-**My Generated Paths**: CTO, Operating Partner at PE fund, M&A/Financial Advisory Consultant, Venture Fund role, Entrepreneur in Residence
+**The Connection:** "This is how we automate the 'last mile' of technical communication. It ensures that our hard work is presented with the professionalism it deserves, without hours of manual formatting. It allows us to focus on the substance of our analysis, knowing the system will handle the world-class presentation."
 
-**Strategic Context Files**: Build GitHub markdown files documenting career paths and "current career thinking" - your situation, goals, and strategic considerations.
-
-**Opportunity Evaluation**: When new jobs or partnerships arise, feed AI your "current career thinking" file plus the opportunity. It evaluates fit against your worldview and suggests whether to adapt your strategy.
-
-**Result**: Like having a career coach who's already thought 5-10 years ahead with high-fidelity scenarios of what your life could look like.
+*(Showcase the report-generation/ demo. Display the .qmd file next to the final PDF.)*
 
 ---
 
-## Workflow: Information Edge
+### **Demo 3: The AI-Powered Feedback Loop (Systematizing Self-Improvement)**
 
-- Export LinkedIn data and query it far beyond the UI.
-- "Deep research" prompts create rich briefings for meetings.
+**The Pitch:** "As engineers, we're great at getting feedback on our code, but often terrible at getting objective feedback on our communication. I treat this as another engineering problem. By recording and transcribing my professional calls (with consent), I create a dataset of my own performance. I then use AI to analyze it, asking critical questions: 'Where are my communication gaps?', 'How could I have handled this negotiation better?', 'What is the sentiment of this call?' This has been one of the most high-leverage ways to improve myself. I will often ask AI for book recommendations—whether it is a new domain I'm getting into (like a certain sector of private equity), a specific communication skill that I'm interested in developing, or an interpersonal skill."
 
----
-
-## AI in Action: Automatic LinkedIn CRM
-
-**The Complete Workflow:**
-
-- **Input Flexibility:** CSV export, screenshot, or simple copy-paste of LinkedIn connections
-- **Deep AI Research:** Claude Code investigates each person's background, current role, and company context
-- **Context Layer Integration:** Cross-references against my personal context (career goals, business challenges, opportunities)
-- **Strategic Reconciliation:** Identifies potential collaborators, advisors, or business opportunities based on alignment
-- **Automated Database:** Builds enriched contact profiles with actionable insights and next steps
-
-**Key Insight:** This transforms passive networking into active relationship strategy. Instead of hoping to remember who someone is months later, AI creates a living database that understands *why* each connection matters to your specific goals.
-
-**The Context Layer Dependency:** This only works because I maintain detailed context files in GitHub—my career aspirations, current projects, industry focus areas. Without this foundation, AI can't make meaningful connections.
-
-![](images/automatic-crm-via-linkedin-data.png){width=90%}
-
----
-
-## Workflow: Personal Augment (Vocabulary Builder)
-
-*   **Inspired by:** "Word Power Made Easy" by legendary grammarian Norman Lewis.
-*   **Functionality:** Feed it your work calls, presentations, or documents. The AI helps you learn vocabulary at the very edge of your knowledge base, making your language more precise and impactful.
-*   **Advanced Application:** An implementation based on "The Well-Spoken Thesaurus" by Tom Heehler. This analyzes your content, encouraging you to replace weak phrases and words with stronger, more meaningful, and active vocabulary.
-*   **The Power of AI:** This demonstrates how AI can take a finite resource—a beloved book or a specific pedagogical approach—and extend its value infinitely. You can continue to benefit from an author's profound insights and teachings, even if they are no longer with us, by applying their methods through AI to your own contemporary content. This transforms a static resource into a dynamic, personalized learning engine.
-
----
-
-## Workflow: Transcript Analysis for Personal Growth
+**The Connection:** "This system provides a data-driven, objective feedback loop for the soft skills that determine career velocity. It helped me identify a tendency to be overly accommodative in negotiations and gave me the confidence to advocate for myself more effectively. It's a way to systematically debug our own professional performance, addressing the imposter syndrome that holds so many of us back."
 
 **The Foundation**: Record calls with clients, customers, partners, and colleagues (with consent). These transcripts are my most valuable daily information asset for self-improvement.
 
@@ -194,31 +199,229 @@ This section details the key tools that power my AI workflow.
 
 ---
 
+### **Demo 4: The AI Vocabulary Coach (Extending Expertise Infinitely)**
+
+**The Pitch:** "We often hit a plateau in our professional language. This system, inspired by legendary grammarians like Norman Lewis and Tom Heehler, acts as a personalized vocabulary coach. I feed it my call transcripts, and it analyzes my language to identify words just at the edge of my current vernacular, making my communication more precise and impactful. The prompts for this are open-sourced in my GitHub."
+
+**The Connection:** "This demonstrates a profound principle: AI can take a finite resource—like the knowledge in a beloved book or the expertise of a mentor who is no longer with us—and extend its value infinitely. It transforms a static resource into a dynamic, personalized learning engine that continuously refines our most critical tool: our language. This is how we systematize not just our work, but our own growth."
+
+*   **Inspired by:** "Word Power Made Easy" by legendary grammarian Norman Lewis.
+*   **Functionality:** Feed it your work calls, presentations, or documents. The AI helps you learn vocabulary at the very edge of your knowledge base, making your language more precise and impactful.
+*   **Advanced Application:** An implementation based on "The Well-Spoken Thesaurus" by Tom Heehler. This analyzes your content, encouraging you to replace weak phrases and words with stronger, more meaningful, and active vocabulary.
+*   **The Power of AI:** This demonstrates how AI can take a finite resource—a beloved book or a specific pedagogical approach—and extend its value infinitely. You can continue to benefit from an author's profound insights and teachings, even if they are no longer with us, by applying their methods through AI to your own contemporary content. This transforms a static resource into a dynamic, personalized learning engine.
+
+---
+
+### **Demo 5: The Automated Networking Strategist (Building an AI-Powered CRM)**
+
+**The Pitch:** "Networking is often reactive and based on memory. This system makes it proactive and strategic. When I get new connections on LinkedIn, I feed them to an agent. The agent researches each person and cross-references them against my personal context files—my career goals, business objectives, and areas of interest."
+
+**The Connection:** "The AI acts as a strategic filter. It reconciles the public data about a person with my private goals to determine if they are a relevant connection. If they are, it automatically adds them to my personal CRM—a simple Markdown database—with notes on why they're relevant. This transforms a passive activity into an automated, high-leverage networking strategy, ensuring I'm building a valuable network with almost zero manual effort."
+
+*(Show screenshot of the AI-generated CRM entry)*
+
+**The Complete Workflow:**
+
+- **Input Flexibility:** CSV export, screenshot, or simple copy-paste of LinkedIn connections
+- **Deep AI Research:** Claude Code investigates each person's background, current role, and company context
+- **Context Layer Integration:** Cross-references against my personal context (career goals, business challenges, opportunities)
+- **Strategic Reconciliation:** Identifies potential collaborators, advisors, or business opportunities based on alignment
+- **Automated Database:** Builds enriched contact profiles with actionable insights and next steps
+
+**Key Insight:** This transforms passive networking into active relationship strategy. Instead of hoping to remember who someone is months later, AI creates a living database that understands *why* each connection matters to your specific goals.
+
+**The Context Layer Dependency:** This only works because I maintain detailed context files in GitHub—my career aspirations, current projects, industry focus areas. Without this foundation, AI can't make meaningful connections.
+
+![](images/automatic-crm-via-linkedin-data.png){width=90%}
+
+---
+
+# **Part 3: The Paradigm Shift (The "What If")**
+
+*(Goal: Connect your system directly to the daily work of the audience and present a new, more powerful way of operating.)*
+
+## **A. The New Paradigm: From Writing Code to Directing Code Generation**
+
+**Core Message:** This is a fundamental shift in our role and where we provide value. The bottleneck is no longer typing speed or syntax knowledge; it's the quality of our thinking, our ability to design robust systems, and our rigor in verifying the output. The senior engineer's primary role becomes that of an architect and the final checkpoint for quality and correctness.
+
+### **The Anthropic PR is Your Proof Point:**
+
+**Pitch:** "This isn't a toy or a theoretical exercise. This is how high-performance teams are already operating. Anthropic successfully merged a 22,000-line, Claude-generated PR into their production RL systems. How? By shifting their entire review process away from painstaking line-by-line code review to a higher-level focus on behavioral verification and system-level testing."
+
+**The Achievement**: Successfully merged ~22,000 lines of Claude-generated code into production RL systems.
+
+**The Process**:
+- Focused changes on leaf areas only
+- Kept core modifications human-reviewed  
+- Relied on offline runs and behavioral tests for approval
+- Used sandbox testing with mocked dependencies
+
+**Key Insight**: AI capability length/complexity doubles every ~7 months. Traditional code review becomes a bottleneck when AI generates weeks of work.
+
+### **Understanding "Vibe Coding" - The New SDLC Reality**
+
+**The Core Question**: How do we review AI-generated work across different roles?
+
+![](images/Anthropic\ Vibe\ Coding\ -\ How\ different\ roles\ review\ work.png){width=85%}
+
+### **The Tech Debt Reality**
+
+![](images/Anthropic\ Vibe\ Coding\ -\ Tech\ Debt\ Caveat.png){width=85%}
+
+**Critical Insights**:
+- **Extensibility cannot be verified** - AI may create working code that's impossible to extend
+- **Focus on "Leaf Nodes"** - AI excels at endpoints, struggles with core architecture  
+- **Core Architecture must still be understood** - Someone needs to own the fundamental design
+
+### **The Vibe Coding Philosophy**
+
+![](images/Anthropic\ Vibe\ Coding\ in\ Prod.png){width=85%}
+
+**"Forget the code exists, but NOT that the product exists!"**
+
+---
+
+## **B. Principles for the New Paradigm**
+
+**1. Change the Abstraction:** Treat the AI like a hyper-productive team you manage. Your job is to write the spec, not the code. Focus on acceptance tests, stress tests, and verifiable system behaviors.
+
+**2. Constrain the Blast Radius:** Start with "leaf nodes"—isolated features, UI components, or scripts with no dependencies. Keep the core, foundational architecture human-owned and rigorously reviewed.
+
+**3. Act as the Model's PM:** Spend 15-20 minutes creating a comprehensive brief. Your leverage comes from the quality of your direction—providing repository maps, context, constraints, and clear success criteria.
+
+**4. Build for Verifiability:** Design for black-box testing. If you can't verify the output with a deterministic input/output contract and robust testing, you can't safely use the generated code.
+
+**Detailed Implementation:**
+
+**1. Change the Abstraction**: Treat AI like a team you manage. Focus on acceptance tests, stress tests, and verifiable system behaviors instead of line-by-line code review.
+
+**2. Constrain the Blast Radius**: Start with "leaf nodes" - isolated features, UI components, scripts with no dependencies. Keep core architecture human-owned.
+
+**3. Act as the Model's Product Manager**: Spend 15-20 minutes creating comprehensive briefs - repository map, context, constraints, patterns, examples, success criteria.
+
+**4. Build Verifiability In**: Design for black-box verification with deterministic input/output contracts and robust testing.
+
+---
+
+# **Conclusion & Discussion**
+
+## **A. The Cohesive System**
+
+**Closing Statement:** "These aren't just isolated tricks or clever hacks. They are components of a cohesive system for professional practice, built on engineering principles. This is how I operate. It's a system designed to maximize the time we spend on interesting, high-impact problems and mercilessly eliminate the time we spend on everything else."
+
+**Subtle Positioning:** This subtly positions you as the expert they should turn to when they want to implement these ideas and build their own systems for leverage.
+
+---
+
+## **B. Answering Our Opening Questions**
+
+**SDLC Change:** Engineers become architects and product managers for AI agents. The most critical skill is no longer writing code, but designing systems and verifying behavior. Review processes must shift from code-level to behavior-level.
+
+**QA Evolution:** QA becomes even more critical, moving towards systems thinking, complex integration testing, and sophisticated black-box verification to validate business logic at scale.
+
+**Team Ratios:** Senior architects who own the fundamental design and can maintain a coherent vision across an AI-augmented team become exponentially more valuable. The ratio of "coders" to "architects" will likely shift.
+
+**Q: How will SDLC change when engineers are 10x more productive but not 10x more knowledgeable?**
+- Engineers become product managers for AI teams
+- Architecture ownership becomes more critical, not less
+- Review processes shift from code-level to behavior-level
+
+**Q: How is QA evolving?**  
+- From testing implementation to validating business logic
+- Black-box verification becomes the standard
+- Acceptance tests and stress tests replace code inspection
+
+**Q: Does AI change developer-to-PM/QA ratios?**
+- PMs need deeper technical intuition to brief AI effectively
+- QA roles evolve toward systems thinking and behavioral verification
+- Senior architects become more valuable for maintaining coherent systems
+
+---
+
+## **C. Open Discussion**
+
+"Now, back to you. What shifts do you see in your teams? What part of your process would you automate first? Let's talk."
+
+- What shifts do you see in your teams and workflows?
+- Let's talk.
+
+---
+
+## **D. Final Slide: Resources**
+
+**Thank You**  
+Contact: [Your Email / LinkedIn]  
+**Open Source Repository:**  
+- [Link to your Git Repository]  
+- Includes: This Presentation, Report Generation Demo, Modular Resume System, Prompt Library.
+
+<!--
+
+# **Archive: Additional Content**
+
+*(The following slides contain valuable content that may be useful for future presentations or reference, but don\'t fit the current presentation flow.)*
+
+## Over-Index on AI – It\'s an Asymmetric Bet
+
+- $20/month tools can unlock outsized ROI.
+- Anecdotes:
+  - Job search: ~$50 investment leading to a ~$40k salary increase.
+  - $200 cloud credit enabling significant business value.
+
+---
+
+## The Ladder of Abstraction: From Prompting to Partnership
+
+### Level 1: Conversational AI
+
+- ChatGPT, Claude and similar tools as baseline assistants.
+
+### Level 2: Integrated Assistants (IDE Extensions)
+
+- Cursor, Roo, and similar VS Code extensions.
+- They read codebases, propose plans, and modify code with approval.
+
+### Level 3: Agentic Partners (CLI Tools)
+
+- Claude Code, Gemini CLI, Codex and others.
+- Operate within the terminal, execute scripts, and manage files.
+- Example: organizing a downloads folder or processing `.eml` email files.
+
+---
+
+## Workflow: AI-Powered Career Strategy
+
+**The Odyssey Plan Exercise**: Feed your resume into Gemini (million-token context) and ask for three career trajectories:
+1. **Continue Current Path** - Natural progression from where you are
+2. **Pivot Path** - Different direction using existing skills  
+3. **Wild Card Path** - Completely unexpected possibilities
+
+**My Generated Paths**: CTO, Operating Partner at PE fund, M&A/Financial Advisory Consultant, Venture Fund role, Entrepreneur in Residence
+
+**Strategic Context Files**: Build GitHub markdown files documenting career paths and "current career thinking" - your situation, goals, and strategic considerations.
+
+**Opportunity Evaluation**: When new jobs or partnerships arise, feed AI your "current career thinking" file plus the opportunity. It evaluates fit against your worldview and suggests whether to adapt your strategy.
+
+**Result**: Like having a career coach who\'s already thought 5-10 years ahead with high-fidelity scenarios of what your life could look like.
+
+---
+
+## Workflow: Information Edge
+
+- Export LinkedIn data and query it far beyond the UI.
+- "Deep research" prompts create rich briefings for meetings.
+
+---
+
 ## AI in Action: Folder Structure
 
 ![AI Folder Structure](images/ai-folder-structure-organization.png){width=90%}
 
 ---
 
-# Part 3: The Broader Implications
-
 ## AI as a Deflationary Force
 
 - Skydio drones inspecting power lines.
 - Gecko Robotics monitoring infrastructure.
 - Improved efficiency in the physical world lowers costs for everyone.
-
----
-
-## Beware of "Vibe Coding"
-
-- Productivity isn't a substitute for foundational systems knowledge.
-- Example: choosing NoSQL when a relational database is required.
-
----
-
-# Conclusion & Discussion
-
-- Revisit the opening questions.
-- What shifts do you see in your teams and workflows?
-- Let's talk.
+-->
