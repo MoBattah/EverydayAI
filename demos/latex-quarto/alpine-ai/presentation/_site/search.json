@@ -2,22 +2,155 @@
   {
     "objectID": "index.html#section-1",
     "href": "index.html#section-1",
-    "title": "My Awesome Presentation",
+    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
     "section": "Section 1",
     "text": "Section 1\n\nPoint 1\nPoint 2"
   },
   {
     "objectID": "index.html#section-2",
     "href": "index.html#section-2",
-    "title": "My Awesome Presentation",
+    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
     "section": "Section 2",
     "text": "Section 2\nThis is another slide."
   },
   {
     "objectID": "index.html#ai-in-action-folder-structure",
     "href": "index.html#ai-in-action-folder-structure",
-    "title": "My Awesome Presentation",
+    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
     "section": "AI in Action: Folder Structure",
-    "text": "AI in Action: Folder Structure\nHere’s an example of how AI helps organize my folder structure.\n\n\n\nAI Folder Structure"
+    "text": "AI in Action: Folder Structure\n\nAI Folder Structure"
+  },
+  {
+    "objectID": "index.html#my-essential-ai-tools",
+    "href": "index.html#my-essential-ai-tools",
+    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
+    "section": "My Essential AI Tools",
+    "text": "My Essential AI Tools\nThis section details the key tools that power my AI workflow."
+  },
+  {
+    "objectID": "index.html#tool-deep-dive-wispr-flow-voice-dictation",
+    "href": "index.html#tool-deep-dive-wispr-flow-voice-dictation",
+    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
+    "section": "Tool Deep Dive: Wispr Flow (Voice Dictation)",
+    "text": "Tool Deep Dive: Wispr Flow (Voice Dictation)\n\nPrimary Use: Voice-to-text dictation across platforms (phone, text messages, emails, AI interaction).\nVolume: Dictating over 100,000 words per month, potentially nearing 200,000.\nWorkflow: Preferred method for interacting with AI. Dictate thoughts, AI structures them. Enables efficient message management (e.g., while walking).\nAI Interaction: Voice-to-text input, text output from AI. Avoids voice-to-voice due to reduced AI content output."
+  },
+  {
+    "objectID": "index.html#tool-deep-dive-agentic-coding",
+    "href": "index.html#tool-deep-dive-agentic-coding",
+    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
+    "section": "Tool Deep Dive: Agentic Coding",
+    "text": "Tool Deep Dive: Agentic Coding\n\nHighest Abstraction: Claude Code (pioneer, model context protocol creator)\nSecondary: Gemini CLI (for tasks not consuming Claude usage, due to hitting Claude limits easily)\nLess Agency: Roo (not currently relevant for your software engineering level)"
+  },
+  {
+    "objectID": "index.html#tool-deep-dive-context-storage-and-management-crucial",
+    "href": "index.html#tool-deep-dive-context-storage-and-management-crucial",
+    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
+    "section": "Tool Deep Dive: Context Storage and Management (Crucial)",
+    "text": "Tool Deep Dive: Context Storage and Management (Crucial)\n\nMethod: Massive GitHub repository storing context layers in Markdown files.\nWhy Markdown: AI prefers Markdown; aesthetically pleasing and integrates well with Quarto.\nTypes of Context: Career feelings, emotions, project goals, business insights, client/customer information, problem definitions.\nAvoid: Storing context directly with foundation model providers."
+  },
+  {
+    "objectID": "index.html#tool-deep-dive-other-tools",
+    "href": "index.html#tool-deep-dive-other-tools",
+    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
+    "section": "Tool Deep Dive: Other Tools",
+    "text": "Tool Deep Dive: Other Tools\n\nWillow\nHypernote\n(Your own custom solution - mention its complexity for cross-platform/feature sets)"
+  },
+  {
+    "objectID": "index.html#session-guidelines-opening-questions",
+    "href": "index.html#session-guidelines-opening-questions",
+    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
+    "section": "Session Guidelines & Opening Questions",
+    "text": "Session Guidelines & Opening Questions\n\nThis is a discussion—jump in via chat or hand raise.\nHow will the Software Development Life Cycle change when every engineer is 10x more productive but not 10x more knowledgeable?\nHow is QA evolving? Are developers spending more time reading and prompting than writing code?\nDoes AI change the ratio of developers to PMs or QA?"
+  },
+  {
+    "objectID": "index.html#my-essential-ai-tools-1",
+    "href": "index.html#my-essential-ai-tools-1",
+    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
+    "section": "My Essential AI Tools",
+    "text": "My Essential AI Tools\nThis section details the key tools that power my AI workflow."
+  },
+  {
+    "objectID": "index.html#tool-deep-dive-wispr-flow-voice-dictation-1",
+    "href": "index.html#tool-deep-dive-wispr-flow-voice-dictation-1",
+    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
+    "section": "Tool Deep Dive: Wispr Flow (Voice Dictation)",
+    "text": "Tool Deep Dive: Wispr Flow (Voice Dictation)\n\nPrimary Use: Voice-to-text dictation across platforms (phone, text messages, emails, AI interaction).\nVolume: Dictating over 100,000 words per month, potentially nearing 200,000.\nWorkflow: Preferred method for interacting with AI. Dictate thoughts, AI structures them. Enables efficient message management (e.g., while walking).\nAI Interaction: Voice-to-text input, text output from AI. Avoids voice-to-voice due to reduced AI content output."
+  },
+  {
+    "objectID": "index.html#tool-deep-dive-agentic-coding-1",
+    "href": "index.html#tool-deep-dive-agentic-coding-1",
+    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
+    "section": "Tool Deep Dive: Agentic Coding",
+    "text": "Tool Deep Dive: Agentic Coding\n\nHighest Abstraction: Claude Code (pioneer, model context protocol creator)\nSecondary: Gemini CLI (for tasks not consuming Claude usage, due to hitting Claude limits easily)\nLess Agency: Roo (not currently relevant for your software engineering level)"
+  },
+  {
+    "objectID": "index.html#tool-deep-dive-context-storage-and-management-crucial-1",
+    "href": "index.html#tool-deep-dive-context-storage-and-management-crucial-1",
+    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
+    "section": "Tool Deep Dive: Context Storage and Management (Crucial)",
+    "text": "Tool Deep Dive: Context Storage and Management (Crucial)\n\nMethod: Massive GitHub repository storing context layers in Markdown files.\nWhy Markdown: AI prefers Markdown; aesthetically pleasing and integrates well with Quarto.\nTypes of Context: Career feelings, emotions, project goals, business insights, client/customer information, problem definitions.\nAvoid: Storing context directly with foundation model providers."
+  },
+  {
+    "objectID": "index.html#tool-deep-dive-other-tools-1",
+    "href": "index.html#tool-deep-dive-other-tools-1",
+    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
+    "section": "Tool Deep Dive: Other Tools",
+    "text": "Tool Deep Dive: Other Tools\n\nWillow\nHypernote\n(Your own custom solution - mention its complexity for cross-platform/feature sets)"
+  },
+  {
+    "objectID": "index.html#over-index-on-ai-its-an-asymmetric-bet",
+    "href": "index.html#over-index-on-ai-its-an-asymmetric-bet",
+    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
+    "section": "Over-Index on AI – It’s an Asymmetric Bet",
+    "text": "Over-Index on AI – It’s an Asymmetric Bet\n\n$20/month tools can unlock outsized ROI.\nAnecdotes:\n\nJob search: ~$50 investment leading to a ~$40k salary increase.\n$200 cloud credit enabling significant business value."
+  },
+  {
+    "objectID": "index.html#augmentation-not-abdication",
+    "href": "index.html#augmentation-not-abdication",
+    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
+    "section": "Augmentation, Not Abdication",
+    "text": "Augmentation, Not Abdication\n\nAI augments judgment; it doesn’t replace it.\nTechnical due diligence: AI probes deeper, but humans make the final call.\nIf a task can be automated, find the next, more valuable task."
+  },
+  {
+    "objectID": "index.html#the-ladder-of-abstraction-from-prompting-to-partnership",
+    "href": "index.html#the-ladder-of-abstraction-from-prompting-to-partnership",
+    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
+    "section": "The Ladder of Abstraction: From Prompting to Partnership",
+    "text": "The Ladder of Abstraction: From Prompting to Partnership\nLevel 1: Conversational AI\n\nChatGPT, Claude and similar tools as baseline assistants.\n\nLevel 2: Integrated Assistants (IDE Extensions)\n\nCursor, Roo, and similar VS Code extensions.\nThey read codebases, propose plans, and modify code with approval.\n\nLevel 3: Agentic Partners (CLI Tools)\n\nClaude Code, Gemini CLI, Codex and others.\nOperate within the terminal, execute scripts, and manage files.\nExample: organizing a downloads folder or processing .eml email files."
+  },
+  {
+    "objectID": "index.html#workflow-knowledge-pipeline-quarto-latex",
+    "href": "index.html#workflow-knowledge-pipeline-quarto-latex",
+    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
+    "section": "Workflow: Knowledge Pipeline (Quarto & LaTeX)",
+    "text": "Workflow: Knowledge Pipeline (Quarto & LaTeX)\n\nWrite in Markdown; render beautiful PDFs.\nReuse templates for SOWs, reports, and a flexible resume system."
+  },
+  {
+    "objectID": "index.html#workflow-information-edge",
+    "href": "index.html#workflow-information-edge",
+    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
+    "section": "Workflow: Information Edge",
+    "text": "Workflow: Information Edge\n\nExport LinkedIn data and query it far beyond the UI.\n“Deep research” prompts create rich briefings for meetings."
+  },
+  {
+    "objectID": "index.html#workflow-personal-augment-vocabulary-builder",
+    "href": "index.html#workflow-personal-augment-vocabulary-builder",
+    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
+    "section": "Workflow: Personal Augment (Vocabulary Builder)",
+    "text": "Workflow: Personal Augment (Vocabulary Builder)\n\nInspired by Word Power Made Easy.\nFeed transcripts or documents to learn new words at the edge of your vocabulary."
+  },
+  {
+    "objectID": "index.html#ai-as-a-deflationary-force",
+    "href": "index.html#ai-as-a-deflationary-force",
+    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
+    "section": "AI as a Deflationary Force",
+    "text": "AI as a Deflationary Force\n\nSkydio drones inspecting power lines.\nGecko Robotics monitoring infrastructure.\nImproved efficiency in the physical world lowers costs for everyone."
+  },
+  {
+    "objectID": "index.html#beware-of-vibe-coding",
+    "href": "index.html#beware-of-vibe-coding",
+    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
+    "section": "Beware of “Vibe Coding”",
+    "text": "Beware of “Vibe Coding”\n\nProductivity isn’t a substitute for foundational systems knowledge.\nExample: choosing NoSQL when a relational database is required."
   }
 ]
