@@ -37,6 +37,15 @@ format:
           \usepackage{caption}
           \usetikzlibrary{positioning, fit, arrows.meta, shapes.arrows, calc, matrix}
           \pgfplotsset{compat=1.17}
+          \usepackage{amsmath} % For advanced math environments
+          \usepackage{booktabs} % For professional table rules
+          \usepackage{subcaption} % For subfigures
+
+          % Define a custom environment for key takeaways
+          \newenvironment{keytakeaway}[1]{\vspace{1em}\noindent\colorbox{primaryblue!15}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\textbf{\color{primaryblue}Key Takeaway: #1}\par\medskip}}}{\vspace{1em}}
+
+          % Custom command for emphasis
+          \newcommand{\aipower}[1]{\textbf{\color{primaryblue}#1}}
           
           % Define professional colors
           \definecolor{primaryblue}{RGB}{0, 102, 204}
@@ -124,7 +133,11 @@ execute:
 
 # Executive Summary {.unnumbered}
 
-This demonstration showcases the power of combining AI assistance with professional document generation tools. Using Quarto and LaTeX, we can create publication-quality technical documents with sophisticated formatting, custom branding, and advanced visual elements.
+This demonstration showcases the power of combining \aipower{AI assistance} with professional document generation tools. Using Quarto and LaTeX, we can create publication-quality technical documents with sophisticated formatting, custom branding, and advanced visual elements.
+
+\begin{keytakeaway}{Efficiency and Quality}
+AI-assisted document generation dramatically reduces production time while maintaining professional, publication-quality results.
+\end{keytakeaway}
 
 **Key Capabilities Demonstrated:**
 
@@ -174,16 +187,68 @@ This demonstration showcases the power of combining AI assistance with professio
 \caption{AI-assisted document generation workflow demonstrating the integration of content creation, processing, and professional formatting.}
 \end{figure}
 
+## Data Flow Visualization
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \begin{tikzpicture}[font=\sffamily\small]
+            \tikzset{
+                data/.style={draw=primaryblue, fill=primaryblue!10, rounded corners, minimum height=1cm, text width=2.5cm, align=center, inner sep=5pt},
+                process/.style={draw=successgreen, fill=successgreen!10, rectangle, minimum height=1cm, text width=2.5cm, align=center, inner sep=5pt},
+                arrow/.style={->, line width=1pt, charcoal}
+            }
+            \node[data] (input) at (0,0) {Raw Data};
+            \node[process, right=1.5cm of input] (ai_process) {AI Processing};
+            \node[data, right=1.5cm of ai_process] (output) {Refined Output};
+            \draw[arrow] (input) -- (ai_process);
+            \draw[arrow] (ai_process) -- (output);
+        \end{tikzpicture}
+        \caption{Simplified Data Processing Flow}
+        \label{fig:data_flow}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \begin{tikzpicture}[font=\sffamily\small]
+            \tikzset{
+                my_step/.style={draw=warningorange, fill=warningorange!10, circle, minimum size=1cm, text width=2cm, align=center, inner sep=5pt},
+                line/.style={->, line width=1pt, charcoal}
+            }
+            \node[my_step] (s1) at (0,0) {Collect};
+            \node[my_step, right=1.5cm of s1] (s2) {Analyze};
+            \node[my_step, right=1.5cm of s2] (s3) {Report};
+            \draw[line] (s1) -- (s2);
+            \draw[line] (s2) -- (s3);
+        \end{tikzpicture}
+        \caption{Document Generation Steps}
+        \label{fig:doc_gen_steps}
+    \end{subfigure}
+    \caption{Detailed visualization of data flow and document generation process.}
+    \label{fig:data_doc_flow}
+\end{figure}
+
 # Process Demonstration
+
 
 ## Workflow Comparison
 
-| Traditional Approach | AI-Enhanced Approach | Improvement |
-|:-------------------|:--------------------|:-----------|
-| **Manual Research** | AI-assisted data gathering | 5x faster |
-| **Word Processing** | Quarto + LaTeX integration | Professional typography |
-| **Static Charts** | TikZ programmatic diagrams | Dynamic visualizations |
-| **Template Reuse** | Automated style consistency | Zero manual formatting |
+\begin{table}[H]
+\centering
+\caption{Workflow Comparison: Traditional vs. AI-Enhanced}
+\label{tbl:workflow_comparison}
+\begin{tabular}{lccr}
+\toprule
+Traditional Approach & AI-Enhanced Approach & Improvement \\
+\midrule
+**Manual Research** & AI-assisted data gathering & 5x faster \\
+**Word Processing** & Quarto + LaTeX integration & Professional typography \\
+**Static Charts** & TikZ programmatic diagrams & Dynamic visualizations \\
+**Template Reuse** & Automated style consistency & Zero manual formatting \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 ## Live Demo Capabilities
 
@@ -227,7 +292,20 @@ This demonstration document includes:
 - **Cross-References:** Automated figure and section numbering
 - **Professional Branding:** Consistent corporate identity
 
+### Predictive Model Equation
+
+We can define a simplified predictive model for market sentiment $S_t$ at time $t$ as:
+
+```latex
+\begin{align*}
+S_t &= \alpha + \beta_1 C_t + \beta_2 N_t + \beta_3 A_t + \epsilon_t \\
+\text{where:}
+C_t &= \text{Composite News Sentiment Score at time } t \nN_t &= \text{Social Media Engagement at time } t \nA_t &= \text{AI-driven Anomaly Detection Score at time } t \n\alpha &= \text{Baseline Sentiment} \n\beta_i &= \text{Coefficients for each factor} \n\epsilon_t &= \text{Error term}
+\end{align*}
+```
+
 ## Build Process
+
 
 The entire document can be generated with a single command:
 
