@@ -118,6 +118,23 @@ This section details the key tools that power my AI workflow.
 
 ---
 
+## Workflow: AI-Powered Career Strategy
+
+**The Odyssey Plan Exercise**: Feed your resume into Gemini (million-token context) and ask for three career trajectories:
+1. **Continue Current Path** - Natural progression from where you are
+2. **Pivot Path** - Different direction using existing skills  
+3. **Wild Card Path** - Completely unexpected possibilities
+
+**My Generated Paths**: CTO, Operating Partner at PE fund, M&A/Financial Advisory Consultant, Venture Fund role, Entrepreneur in Residence
+
+**Strategic Context Files**: Build GitHub markdown files documenting career paths and "current career thinking" - your situation, goals, and strategic considerations.
+
+**Opportunity Evaluation**: When new jobs or partnerships arise, feed AI your "current career thinking" file plus the opportunity. It evaluates fit against your worldview and suggests whether to adapt your strategy.
+
+**Result**: Like having a career coach who's already thought 5-10 years ahead with high-fidelity scenarios of what your life could look like.
+
+---
+
 ## Workflow: Information Edge
 
 - Export LinkedIn data and query it far beyond the UI.
