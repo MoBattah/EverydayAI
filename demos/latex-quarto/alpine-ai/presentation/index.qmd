@@ -1,11 +1,42 @@
 ---
-title: "My Awesome Presentation"
+title: "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise"
 format: revealjs
 ---
 
-# Introduction
+# Commandments for this Presentation
 
-This is the first slide of my presentation.
+1.  **Raise your hands!** Your contributions are more important than my content, and we *will* finish my content anyway. I will auto-manage our time.
+2.  **Clarify and Correct:** In this rapidly advancing world of AI, words can have multiple meanings. If I say something that sounds wrong, needs clarification, or is out of date, please correct me. Share your stories or complimentary information. This is a place where everyone has something to contribute; there are no know-it-alls, only learn-it-alls. Our diverse audience from private equity portfolio companies means diverse experiences, which is a good thing.
+
+## My Essential AI Tools
+
+This section details the key tools that power my AI workflow.
+
+## Tool Deep Dive: Wispr Flow (Voice Dictation)
+
+*   **Primary Use:** Voice-to-text dictation across platforms (phone, text messages, emails, AI interaction).
+*   **Volume:** Dictating over 100,000 words per month, potentially nearing 200,000.
+*   **Workflow:** Preferred method for interacting with AI. Dictate thoughts, AI structures them. Enables efficient message management (e.g., while walking).
+*   **AI Interaction:** Voice-to-text input, text output from AI. Avoids voice-to-voice due to reduced AI content output.
+
+## Tool Deep Dive: Agentic Coding
+
+*   **Highest Abstraction:** Claude Code (pioneer, model context protocol creator)
+*   **Secondary:** Gemini CLI (for tasks not consuming Claude usage, due to hitting Claude limits easily)
+*   **Less Agency:** Roo (not currently relevant for your software engineering level)
+
+## Tool Deep Dive: Context Storage and Management (Crucial)
+
+*   **Method:** Massive GitHub repository storing context layers in Markdown files.
+*   **Why Markdown:** AI prefers Markdown; aesthetically pleasing and integrates well with Quarto.
+*   **Types of Context:** Career feelings, emotions, project goals, business insights, client/customer information, problem definitions.
+*   **Avoid:** Storing context directly with foundation model providers.
+
+## Tool Deep Dive: Other Tools
+
+*   Willow
+*   Hypernote
+*   (Your own custom solution - mention its complexity for cross-platform/feature sets)
 
 ## Section 1
 
