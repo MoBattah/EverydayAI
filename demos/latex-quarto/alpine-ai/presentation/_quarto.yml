@@ -1,0 +1,19 @@
+project:
+  type: website
+
+website:
+  title: "presentation"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    css: styles.css
+    toc: true
+
+
+

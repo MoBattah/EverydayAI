@@ -1,0 +1,23 @@
+---
+title: "My Awesome Presentation"
+format: revealjs
+---
+
+# Introduction
+
+This is the first slide of my presentation.
+
+## Section 1
+
+- Point 1
+- Point 2
+
+## Section 2
+
+This is another slide.
+
+## AI in Action: Folder Structure
+
+Here's an example of how AI helps organize my folder structure.
+
+![AI Folder Structure](images/ai-folder-structure-organization.png)

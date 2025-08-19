@@ -1,0 +1,21 @@
+/*-- scss:defaults --*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+  --r-main-font: 'Roboto', sans-serif;
+  --r-background-color: #f8f8f8;
+}
+
+.reveal .slides section {
+  background-color: var(--r-background-color);
+}
+
+/*-- scss:rules --*/
+
+.reveal img {
+  max-width: 90%;
+  max-height: 80vh; /* Limit height to viewport height */
+  border: 5px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

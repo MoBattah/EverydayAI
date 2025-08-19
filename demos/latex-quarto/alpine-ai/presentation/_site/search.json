@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "index.html#section-1",
+    "href": "index.html#section-1",
+    "title": "My Awesome Presentation",
+    "section": "Section 1",
+    "text": "Section 1\n\nPoint 1\nPoint 2"
+  },
+  {
+    "objectID": "index.html#section-2",
+    "href": "index.html#section-2",
+    "title": "My Awesome Presentation",
+    "section": "Section 2",
+    "text": "Section 2\nThis is another slide."
+  },
+  {
+    "objectID": "index.html#ai-in-action-folder-structure",
+    "href": "index.html#ai-in-action-folder-structure",
+    "title": "My Awesome Presentation",
+    "section": "AI in Action: Folder Structure",
+    "text": "AI in Action: Folder Structure\nHere’s an example of how AI helps organize my folder structure.\n\n\n\nAI Folder Structure"
+  }
+]
