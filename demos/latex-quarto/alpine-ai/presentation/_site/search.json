@@ -1,156 +1,37 @@
 [
   {
-    "objectID": "index.html#section-1",
-    "href": "index.html#section-1",
-    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
-    "section": "Section 1",
-    "text": "Section 1\n\nPoint 1\nPoint 2"
+    "objectID": "presentation-outline-private.html#title-slide",
+    "href": "presentation-outline-private.html#title-slide",
+    "title": "The Asymmetric Bet: AI for Engineering and Enterprise",
+    "section": "Title Slide",
+    "text": "Title Slide\n\nThe Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise\nPresented by: Mo Battah\nFor: Alpine Investors & Portfolio Companies\nDate: 08/20/2025\nLink to Open Source Repo: [Link to your Git Repository]"
   },
   {
-    "objectID": "index.html#section-2",
-    "href": "index.html#section-2",
-    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
-    "section": "Section 2",
-    "text": "Section 2\nThis is another slide."
+    "objectID": "presentation-outline-private.html#part-1-the-new-mental-model-the-why",
+    "href": "presentation-outline-private.html#part-1-the-new-mental-model-the-why",
+    "title": "The Asymmetric Bet: AI for Engineering and Enterprise",
+    "section": "Part 1: The New Mental Model (The “Why”)",
+    "text": "Part 1: The New Mental Model (The “Why”)\n(Goal: Align the audience on a shared philosophy before diving into the tools. Frame AI not as a novelty, but as a strategic imperative.)\nA. Introduction & The Ground Rules\n\nMy Background & Connection to Alpine/ASG:\nCommandments for Our Session:\n\nThis is a Discussion: Raise your hand, use the chat. Your questions and contributions are more valuable than my slides.\nClarify and Correct: The AI landscape evolves daily. If I miss something, say something. We are all “learn-it-alls” here.\n\nThe Provocative Questions (Let these simmer):\n\nHow will the Software Development Life Cycle (SDLC) fundamentally change when every engineer is Nx more productive, but not necessarily Nx more knowledgeable about systems design or domain?\nWhat happens to the traditional ratios of Product Managers to QA to Developers? Do they oscillate depending on the AI proficiency gains of each unit? Are responsibilities shifted between roles? Such as developers doing more QA? Or something else.\nWhat is the true ROI of a $20/month AI subscription, and how do we even begin to calculate it? Some months your meeting transcription AI may score you a $100k ARR deal or may save an employee from leaving because you were able to decipher their frustrations because AI picked up on it in your calls.\n\n\nB. Thesis 1: Over-Index on AI — It’s an Asymmetric Bet\n\nCore Message: Small, consistent investments in AI tooling and workflows yield disproportionately massive returns.\nAnecdote 1 (Relatable ROI): The Job Search\n\nFraming: “A potential ~$40k salary increase for a ~$50 investment in tools is an 800x return. Where else in your business do you see that?”\n\nAnecdote 2 (Business-Critical ROI): The Cloud Credit\n\nFraming: “A simple prompt that saves $200 in cloud credits can unlock disproportionate commercial value. This resonates with every portfolio company leader.”\n\n\nC. Thesis 2: Augmentation, Not Abdication\n\nCore Message: Countering the hype. The sophisticated approach is to use AI as a collaborator that enhances expert judgment, not a replacement that encourages blind delegation.\nMy Use Case: Technical Due Diligence\n\nExplain how AI is used to “probe deeper, validate assumptions, and expand research,” but never to make the final judgment call.\n(Refer to prompt: prompts/osint/technical-due-diligence.md)\n\nThe Key Axiom: “If a work output can be fully automated to a satisfactory degree, your job is to find a more valuable work output. The old one’s price just became the price of tokens.”"
   },
   {
-    "objectID": "index.html#ai-in-action-folder-structure",
-    "href": "index.html#ai-in-action-folder-structure",
-    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
-    "section": "AI in Action: Folder Structure",
-    "text": "AI in Action: Folder Structure\n\nAI Folder Structure"
+    "objectID": "presentation-outline-private.html#part-2-the-practitioners-toolkit-the-how",
+    "href": "presentation-outline-private.html#part-2-the-practitioners-toolkit-the-how",
+    "title": "The Asymmetric Bet: AI for Engineering and Enterprise",
+    "section": "Part 2: The Practitioner’s Toolkit (The “How”)",
+    "text": "Part 2: The Practitioner’s Toolkit (The “How”)\n(Goal: Demonstrate the practical application of the philosophy through a ladder of complexity, showcasing real-world tools and workflows.)\nA. The Ladder of Abstraction: From Prompting to Partnership\n\nLevel 1: The Baseline (Conversational AI)\n\nTools: ChatGPT, Claude, Gemini.\nConcept: The shared starting point everyone knows. Acknowledge it and move on quickly.\n\nLevel 2: The Integrated Assistant (IDE Extensions)\n\nTools: Cursor, Roo, C-Line.\nConcept: “AI is no longer in a separate window; it’s a participant in your codebase.”\nExplain the workflow: It reads the codebase, generates a plan, gets approval, and then implements changes.\n(Show screenshots of an AI plan in Roo or Cursor for a coding task.)\n\nLevel 3: The Agentic Partner (CLI Tools)\n\nTools: Claude Code (my favorite), Gemini CLI, Codex.\nConcept: “This is the most significant leap. The AI now has access to the same environment you do. It can read your file system, execute any binary, and use your helper scripts. It’s a true collaborator.”\nSimple, Non-Technical Example: “Organizing my downloads folder.” Explain how it can identify file types, read contents (even images), and rename/move them based on your rules.\nTechnical Example: Parsing .eml email files. Explain how it can either process them directly or write and execute a Python script to do it.\n\n\nB. My Personal AI Stack & Philosophy\n\nInput: Wispr Flow - My primary interface. Dictating over 100k words/month. It’s about capturing thoughts frictionlessly.\nStorage: The “Context Layer” - My life’s knowledge in a private GitHub repo of Markdown files. AI-friendly, version-controlled, and portable.\nModels: A Tiered Approach\n\n#1 - Gemini: Primary workhorse due to its massive context window. I pay for it, even with free access. Perfect for combining multiple “context layers.”\n#2 - Claude: A close second, especially for creative and coding tasks.\n#3 - ChatGPT (4.0): Used sparingly. Personal dislike for GPT-5’s current performance.\nHonorable Mention: Perplexity - I don’t use it, but it’s crucial to know the younger generation loves it.\n\n\nC. Synthesizing Power: Building Personal Systems\n(Here, you connect the tools to the demos in your open-source repository.)\n\nWorkflow 1: The Knowledge Pipeline (Automated Document Generation)\n\nThe Stack: Markdown (.qmd) -&gt; Quarto -&gt; LaTeX -&gt; Beautiful PDF.\nThe Value: “I focus 100% on the content in a simple, AI-friendly format, and the system handles the world-class presentation.”\nApplication 1: SOW Generation. Explain the process: take a call transcript, feed it to Claude Code with an existing SOW, and get a new draft in minutes, not hours.\nApplication 2: The Report System.\n\n(Showcase the report-generation/ demo. Display the clean .qmd file side-by-side with the final, professionally rendered PDF from AI_Technical_Analysis_Demo.pdf.)\n\nApplication 3: The Resume System.\n\n(Showcase the resume-system/ demo. Explain the modular architecture in the content/ directory and run the build script to show how different versions are generated for different roles.)\n\n\nWorkflow 2: The Information Edge (OSINT & Data Analysis)\n\nApplication 1: LinkedIn Data Analysis. “You can ask questions of your network that LinkedIn’s UI would never allow.” (e.g., “Find connections in my network in X industry and enrich their data with a Google search.”)\nApplication 2: The “Deep Research” Prompt.\n\n(Refer to prompt: prompts/osint/osint-individual-reputation-research-prompt.md)\nStory 1: Sam Senior (Testbox). Frame as elevating the conversation and building rapport through genuine preparation. Mention using Gemini’s audio summary feature.\nStory 2: The Founder’s Partner. Frame as critical, integrity-focused due diligence. Use this to underscore the power and potential ethical considerations.\n\n\nWorkflow 3: The Personal Augment (Self-Improvement)\n\nThe Inspiration: Norman Lewis’s Word Power Made Easy (1979) and a thesaurus of phrases.\nThe System: “A vocabulary coach that analyzes my transcripts and documents to find words at the edge of my vernacular, then teaches them to me in the style of Norman Lewis.”\n(Refer to prompts: prompts/linguistics-prompts/ directory. Briefly show the hybrid-vocabulary-coach-prompt.md.)"
   },
   {
-    "objectID": "index.html#my-essential-ai-tools",
-    "href": "index.html#my-essential-ai-tools",
-    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
-    "section": "My Essential AI Tools",
-    "text": "My Essential AI Tools\nThis section details the key tools that power my AI workflow."
+    "objectID": "presentation-outline-private.html#part-3-the-broader-implications-the-what-if",
+    "href": "presentation-outline-private.html#part-3-the-broader-implications-the-what-if",
+    "title": "The Asymmetric Bet: AI for Engineering and Enterprise",
+    "section": "Part 3: The Broader Implications (The “What If”)",
+    "text": "Part 3: The Broader Implications (The “What If”)\n(Goal: Zoom out from personal use cases to systemic impact, leaving the audience with a sense of awe, urgency, and pragmatic caution.)\nA. The Macro View: AI as a Deflationary Force\n\nThe Thesis: This isn’t just about personal productivity; it’s about fundamentally improving the efficiency of the physical world.\nExample 1: Skydio Drones for power line inspections -&gt; safer, faster, lower energy costs.\nExample 2: Gecko Robotics for infrastructure integrity -&gt; improved safety, lower maintenance costs.\nThe Takeaway: AI’s impact on the physical world will drive down costs for everyone.\n\nB. A Word of Caution: The Peril of “Vibe Coding”\n\nThe Problem: Increased developer productivity is not a substitute for foundational knowledge of systems design.\nMy Observation: I’m seeing high-ranking individuals make poor architectural choices because the AI suggested it and they lacked the expertise to question it.\nThe Concrete Example: “They’re using a NoSQL database like Mongo where a relational database is clearly required. Or using Elk Stack as a primary database. This isn’t just tech debt; it’s building a faulty foundation.”\nThe Reinforcement: This is why “Augmentation, Not Abdication” is the only sustainable path forward for any serious business.\n\nC. The SDLC Revisited: Corporate Adoption So Far\n\nMy Observation: Deep adoption of tools like Cursor and Claude Code is happening at the individual/team level.\nWhat I’m NOT Seeing (Yet): Wholesale changes to team structures (e.g., 2-dev pods), or product managers writing production code at scale.\nThis is the Open Question: The productivity gains are real, but the organizational adaptation is lagging. This is the opportunity space for Alpine’s portfolio companies."
   },
   {
-    "objectID": "index.html#tool-deep-dive-wispr-flow-voice-dictation",
-    "href": "index.html#tool-deep-dive-wispr-flow-voice-dictation",
-    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
-    "section": "Tool Deep Dive: Wispr Flow (Voice Dictation)",
-    "text": "Tool Deep Dive: Wispr Flow (Voice Dictation)\n\nPrimary Use: Voice-to-text dictation across platforms (phone, text messages, emails, AI interaction).\nVolume: Dictating over 100,000 words per month, potentially nearing 200,000.\nWorkflow: Preferred method for interacting with AI. Dictate thoughts, AI structures them. Enables efficient message management (e.g., while walking).\nAI Interaction: Voice-to-text input, text output from AI. Avoids voice-to-voice due to reduced AI content output."
-  },
-  {
-    "objectID": "index.html#tool-deep-dive-agentic-coding",
-    "href": "index.html#tool-deep-dive-agentic-coding",
-    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
-    "section": "Tool Deep Dive: Agentic Coding",
-    "text": "Tool Deep Dive: Agentic Coding\n\nHighest Abstraction: Claude Code (pioneer, model context protocol creator)\nSecondary: Gemini CLI (for tasks not consuming Claude usage, due to hitting Claude limits easily)\nLess Agency: Roo (not currently relevant for your software engineering level)"
-  },
-  {
-    "objectID": "index.html#tool-deep-dive-context-storage-and-management-crucial",
-    "href": "index.html#tool-deep-dive-context-storage-and-management-crucial",
-    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
-    "section": "Tool Deep Dive: Context Storage and Management (Crucial)",
-    "text": "Tool Deep Dive: Context Storage and Management (Crucial)\n\nMethod: Massive GitHub repository storing context layers in Markdown files.\nWhy Markdown: AI prefers Markdown; aesthetically pleasing and integrates well with Quarto.\nTypes of Context: Career feelings, emotions, project goals, business insights, client/customer information, problem definitions.\nAvoid: Storing context directly with foundation model providers."
-  },
-  {
-    "objectID": "index.html#tool-deep-dive-other-tools",
-    "href": "index.html#tool-deep-dive-other-tools",
-    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
-    "section": "Tool Deep Dive: Other Tools",
-    "text": "Tool Deep Dive: Other Tools\n\nWillow\nHypernote\n(Your own custom solution - mention its complexity for cross-platform/feature sets)"
-  },
-  {
-    "objectID": "index.html#session-guidelines-opening-questions",
-    "href": "index.html#session-guidelines-opening-questions",
-    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
-    "section": "Session Guidelines & Opening Questions",
-    "text": "Session Guidelines & Opening Questions\n\nThis is a discussion—jump in via chat or hand raise.\nHow will the Software Development Life Cycle change when every engineer is 10x more productive but not 10x more knowledgeable?\nHow is QA evolving? Are developers spending more time reading and prompting than writing code?\nDoes AI change the ratio of developers to PMs or QA?"
-  },
-  {
-    "objectID": "index.html#my-essential-ai-tools-1",
-    "href": "index.html#my-essential-ai-tools-1",
-    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
-    "section": "My Essential AI Tools",
-    "text": "My Essential AI Tools\nThis section details the key tools that power my AI workflow."
-  },
-  {
-    "objectID": "index.html#tool-deep-dive-wispr-flow-voice-dictation-1",
-    "href": "index.html#tool-deep-dive-wispr-flow-voice-dictation-1",
-    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
-    "section": "Tool Deep Dive: Wispr Flow (Voice Dictation)",
-    "text": "Tool Deep Dive: Wispr Flow (Voice Dictation)\n\nPrimary Use: Voice-to-text dictation across platforms (phone, text messages, emails, AI interaction).\nVolume: Dictating over 100,000 words per month, potentially nearing 200,000.\nWorkflow: Preferred method for interacting with AI. Dictate thoughts, AI structures them. Enables efficient message management (e.g., while walking).\nAI Interaction: Voice-to-text input, text output from AI. Avoids voice-to-voice due to reduced AI content output."
-  },
-  {
-    "objectID": "index.html#tool-deep-dive-agentic-coding-1",
-    "href": "index.html#tool-deep-dive-agentic-coding-1",
-    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
-    "section": "Tool Deep Dive: Agentic Coding",
-    "text": "Tool Deep Dive: Agentic Coding\n\nHighest Abstraction: Claude Code (pioneer, model context protocol creator)\nSecondary: Gemini CLI (for tasks not consuming Claude usage, due to hitting Claude limits easily)\nLess Agency: Roo (not currently relevant for your software engineering level)"
-  },
-  {
-    "objectID": "index.html#tool-deep-dive-context-storage-and-management-crucial-1",
-    "href": "index.html#tool-deep-dive-context-storage-and-management-crucial-1",
-    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
-    "section": "Tool Deep Dive: Context Storage and Management (Crucial)",
-    "text": "Tool Deep Dive: Context Storage and Management (Crucial)\n\nMethod: Massive GitHub repository storing context layers in Markdown files.\nWhy Markdown: AI prefers Markdown; aesthetically pleasing and integrates well with Quarto.\nTypes of Context: Career feelings, emotions, project goals, business insights, client/customer information, problem definitions.\nAvoid: Storing context directly with foundation model providers."
-  },
-  {
-    "objectID": "index.html#tool-deep-dive-other-tools-1",
-    "href": "index.html#tool-deep-dive-other-tools-1",
-    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
-    "section": "Tool Deep Dive: Other Tools",
-    "text": "Tool Deep Dive: Other Tools\n\nWillow\nHypernote\n(Your own custom solution - mention its complexity for cross-platform/feature sets)"
-  },
-  {
-    "objectID": "index.html#over-index-on-ai-its-an-asymmetric-bet",
-    "href": "index.html#over-index-on-ai-its-an-asymmetric-bet",
-    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
-    "section": "Over-Index on AI – It’s an Asymmetric Bet",
-    "text": "Over-Index on AI – It’s an Asymmetric Bet\n\n$20/month tools can unlock outsized ROI.\nAnecdotes:\n\nJob search: ~$50 investment leading to a ~$40k salary increase.\n$200 cloud credit enabling significant business value."
-  },
-  {
-    "objectID": "index.html#augmentation-not-abdication",
-    "href": "index.html#augmentation-not-abdication",
-    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
-    "section": "Augmentation, Not Abdication",
-    "text": "Augmentation, Not Abdication\n\nAI augments judgment; it doesn’t replace it.\nTechnical due diligence: AI probes deeper, but humans make the final call.\nIf a task can be automated, find the next, more valuable task."
-  },
-  {
-    "objectID": "index.html#the-ladder-of-abstraction-from-prompting-to-partnership",
-    "href": "index.html#the-ladder-of-abstraction-from-prompting-to-partnership",
-    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
-    "section": "The Ladder of Abstraction: From Prompting to Partnership",
-    "text": "The Ladder of Abstraction: From Prompting to Partnership\nLevel 1: Conversational AI\n\nChatGPT, Claude and similar tools as baseline assistants.\n\nLevel 2: Integrated Assistants (IDE Extensions)\n\nCursor, Roo, and similar VS Code extensions.\nThey read codebases, propose plans, and modify code with approval.\n\nLevel 3: Agentic Partners (CLI Tools)\n\nClaude Code, Gemini CLI, Codex and others.\nOperate within the terminal, execute scripts, and manage files.\nExample: organizing a downloads folder or processing .eml email files."
-  },
-  {
-    "objectID": "index.html#workflow-knowledge-pipeline-quarto-latex",
-    "href": "index.html#workflow-knowledge-pipeline-quarto-latex",
-    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
-    "section": "Workflow: Knowledge Pipeline (Quarto & LaTeX)",
-    "text": "Workflow: Knowledge Pipeline (Quarto & LaTeX)\n\nWrite in Markdown; render beautiful PDFs.\nReuse templates for SOWs, reports, and a flexible resume system."
-  },
-  {
-    "objectID": "index.html#workflow-information-edge",
-    "href": "index.html#workflow-information-edge",
-    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
-    "section": "Workflow: Information Edge",
-    "text": "Workflow: Information Edge\n\nExport LinkedIn data and query it far beyond the UI.\n“Deep research” prompts create rich briefings for meetings."
-  },
-  {
-    "objectID": "index.html#workflow-personal-augment-vocabulary-builder",
-    "href": "index.html#workflow-personal-augment-vocabulary-builder",
-    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
-    "section": "Workflow: Personal Augment (Vocabulary Builder)",
-    "text": "Workflow: Personal Augment (Vocabulary Builder)\n\nInspired by Word Power Made Easy.\nFeed transcripts or documents to learn new words at the edge of your vocabulary."
-  },
-  {
-    "objectID": "index.html#ai-as-a-deflationary-force",
-    "href": "index.html#ai-as-a-deflationary-force",
-    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
-    "section": "AI as a Deflationary Force",
-    "text": "AI as a Deflationary Force\n\nSkydio drones inspecting power lines.\nGecko Robotics monitoring infrastructure.\nImproved efficiency in the physical world lowers costs for everyone."
-  },
-  {
-    "objectID": "index.html#beware-of-vibe-coding",
-    "href": "index.html#beware-of-vibe-coding",
-    "title": "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise",
-    "section": "Beware of “Vibe Coding”",
-    "text": "Beware of “Vibe Coding”\n\nProductivity isn’t a substitute for foundational systems knowledge.\nExample: choosing NoSQL when a relational database is required."
+    "objectID": "presentation-outline-private.html#conclusion-open-discussion",
+    "href": "presentation-outline-private.html#conclusion-open-discussion",
+    "title": "The Asymmetric Bet: AI for Engineering and Enterprise",
+    "section": "Conclusion & Open Discussion",
+    "text": "Conclusion & Open Discussion\nA. Revisiting the Opening Questions\n\n“Now, having seen all this, I turn my original questions back to you…”\n\nHow do you think the SDLC will change?\nWhat are you seeing with your QA and Product teams?\nHow are you thinking about the ROI of these tools?\n\nLet the conversation begin. (Facilitate a discussion rather than a Q&A).\n\nB. Final Slide: Resources\n\nThank You\nContact: [Your Email / LinkedIn]\nOpen Source Repository:\n\n[Link to your Git Repository]\nIncludes:\n\nThis Presentation Outline\nReport Generation Demo (report-generation/)\nModular Resume System Demo (resume-system/)\nPrompt Library (prompts/) for vocabulary, OSINT, and more."
   }
 ]
