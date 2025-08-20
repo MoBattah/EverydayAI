@@ -1,9 +1,5 @@
-demos/latex-quarto/alpine-ai/.DS_Store
-demos/latex-quarto/alpine-ai/presentation/index.pdf
-demos/latex-quarto/alpine-ai/presentation/index.tex
-demos/latex-quarto/alpine-ai/artifacts/
-demos/latex-quarto/alpine-ai/presentation/about.pdf
-demos/latex-quarto/alpine-ai/presentation/about.tex
-demos/latex-quarto/alpine-ai/presentation/index.fdb_latexmk
-demos/latex-quarto/alpine-ai/presentation/presentation-outline-private.pdf
-demos/latex-quarto/alpine-ai/presentation/presentation-outline-private.tex
+# Quarto
+/_site/
+/_freeze/
+*.pdf
+*.html
