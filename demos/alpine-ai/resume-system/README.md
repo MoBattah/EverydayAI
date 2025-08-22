@@ -131,8 +131,9 @@ Perfect for demonstrating how AI + modern tooling transforms traditionally manua
 
 ## 🚀 Requirements
 
-- **pdflatex**: LaTeX compilation (included in MacTeX)
-- **pdftotext**: Text extraction (optional, graceful fallback)
+- **pdflatex**: LaTeX compilation (included in MacTeX or TeX Live)
+- **pandoc**: For Word and HTML conversion (optional, graceful fallback)
+- **pdftotext**: For text extraction (optional, graceful fallback)
 - **Standard Unix tools**: bash, find, etc.
 
 Built for presentation impact and technical demonstration! 🎯

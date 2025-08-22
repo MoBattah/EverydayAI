@@ -19,7 +19,6 @@ alpine-ai/
 ├── _quarto.yml                          # Quarto project configuration
 ├── AI_Technical_Analysis_Demo.qmd       # Main demo document
 ├── build.sh                             # Build automation script
-├── PRESENTATION_NOTES.md                # Detailed presentation guide
 ├── README.md                            # This file
 └── output/                              # Generated PDFs
     └── AI_Technical_Analysis_Demo.pdf   # Professional output

@@ -1,6 +1,27 @@
-# Quarto
-/_site/
-/_freeze/
-*.pdf
+# macOS system files
+.DS_Store
+
+# Quarto build artifacts
+# This will ignore all _site directories, like demos/alpine-ai/presentation/_site/
+_site/
+_freeze/
+
+# LaTeX auxiliary files
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+
+# General build outputs - ignore all html and pdf files by default
 *.html
+*.pdf
+
+# --- EXCEPTIONS ---
+# Keep specific, important output files that are part of the demo showcase,
+# as linked from the main README.md.
+!demos/alpine-ai/report-generation/output/AI_Technical_Analysis_Demo.pdf
+!demos/alpine-ai/resume-system/outputs/ai-consultant/ai-consultant-resume.pdf
+!demos/alpine-ai/resume-system/outputs/tech-leadership/tech-leadership-resume.pdf
 !demos/alpine-ai/presentation/index.pdf
