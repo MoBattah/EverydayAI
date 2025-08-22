@@ -3,3 +3,4 @@
 /_freeze/
 *.pdf
 *.html
+!demos/alpine-ai/presentation/index.pdf

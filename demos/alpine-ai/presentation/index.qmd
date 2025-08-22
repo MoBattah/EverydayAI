@@ -174,7 +174,7 @@ The world is rapidly transforming into **a world of tokens** — where these tok
 
 **Key Insight:** Your thoughts become digital assets
 
-![Wispr Flow - Work at the speed you think in every application](images/wisprflow.png){width=85% style="border: 2px solid #e0e0e0; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"}
+![Wispr Flow - Work at the speed you think in every application](images/wisprflow.png){width=75% style="border: 2px solid #e0e0e0; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"}
 
 ---
 
@@ -428,7 +428,7 @@ The world is rapidly transforming into **a world of tokens** — where these tok
 
 **Contact:** Mo Battah | linkedin.com/in/MoBattah
 
-**Open Source Repository:** https://github.com/MoBattah/prompts
+**Open Source Repository:** GitHub.com/MoBattah/EverydayAI
 - This Presentation
 - Report Generation Demo  
 - Modular Resume System
