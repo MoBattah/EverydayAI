@@ -1,0 +1,705 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  ignorenonframetext,
+  aspectratio=169,
+]{beamer}
+\newif\ifbibliography
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% remove section numbering
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{section title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{subsection title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+
+\usetheme[]{metropolis}
+\usecolortheme[]{default}
+\usefonttheme[]{default}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+
+
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+\usepackage{caption}
+% Make caption package work with longtable
+\makeatletter
+\def\fnum@table{\tablename~\thetable}
+\makeatother
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+
+\author{}
+\date{}
+
+\begin{document}
+
+
+\section{\texorpdfstring{\textbf{Presentation Outline: A Cohesive System
+for Engineering
+Leverage}}{Presentation Outline: A Cohesive System for Engineering Leverage}}\label{presentation-outline-a-cohesive-system-for-engineering-leverage}
+
+\begin{frame}{\textbf{Title Slide}}
+\phantomsection\label{title-slide}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Automating the Mundane, Building the Monumental: A
+  Practitioner's System for AI-Driven Engineering}\\
+\item
+  Presented by: Mo Battah\\
+\item
+  Audience: {[}Target Engineering Team/Conference{]}\\
+\item
+  Date: 08/20/2025\\
+\item
+  Link to Open Source Repo: {[}Link to your Git Repository{]}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{\textbf{Part 1: The Philosophy (The ``Why'')}}
+\phantomsection\label{part-1-the-philosophy-the-why}
+\emph{(Goal: Establish immediate resonance with fellow engineers by
+framing the problem as engineering toil vs.~creative work. Present a
+philosophy of work that every engineer will covet.)}
+
+\begin{block}{\textbf{A. Introduction: Speaking Peer-to-Peer}}
+\phantomsection\label{a.-introduction-speaking-peer-to-peer}
+\begin{itemize}
+\item
+  \textbf{My Background:} Recently VP, DevOps Engineering at
+  Actabl/Alpine Investors. Since leaving 1.5 months ago, I've advised on
+  \textgreater\$10M in transactions and am currently helping founders in
+  AI agents, cybersecurity, and deep tech.
+\item
+  \textbf{Portfolio Context for Speaking Notes:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{ProtectAI} (→ Palo Alto Networks): AI security, protecting
+    ML models from attacks
+  \item
+    \textbf{Skydio}: Autonomous drones revolutionizing power line
+    inspection, bringing down electricity costs
+  \item
+    \textbf{Dreadnode}: Red teaming against AI systems, offensive LLM
+    security for government and enterprise
+  \item
+    \textbf{Resourcely} (→ Cursor): Infrastructure as code platform
+  \item
+    \textbf{Kodiak Robotics}: Autonomous trucking already operating in
+    Permian Basin, moving sand for fracking operations
+  \item
+    \textbf{Additional notable portfolio}: Sublime Security (trusted by
+    Netflix, Spotify), Nucleus Security (American Airlines, Mastercard),
+    SpecterOps (market-leading cybersecurity), and many others
+  \end{itemize}
+\item
+  \textbf{AI as Deflationary Force Context}: Skydio and Kodiak are
+  perfect examples of AI dramatically reducing costs in critical
+  infrastructure. Skydio is making power line inspection vastly cheaper,
+  potentially reducing electricity costs. Kodiak's autonomous trucks in
+  the Permian Basin are already reducing transportation costs for oil
+  operations, potentially affecting gas and oil prices through
+  efficiency gains.
+\item
+  \textbf{Refined Narrative:} ``AI isn't about replacing us; it's about
+  automating the mundane so we can focus on the monumental. I'm not here
+  to show you theoretical futures---I'm showing you systems I use daily
+  to close real deals and help portfolio companies scale.''
+\end{itemize}
+\end{block}
+
+\begin{block}{\textbf{B. Core Principle: Augmentation, Not Abdication}}
+\phantomsection\label{b.-core-principle-augmentation-not-abdication}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Core Message:} This is not about blindly trusting AI or
+  outsourcing our thinking. It's about a fundamental shift in our role,
+  moving from a ``doer'' to an ``architect.'' It's a new, more leveraged
+  form of engineering leadership where we define the problem, design the
+  solution, and act as the ultimate verifiers of quality.\\
+\item
+  \textbf{The Key Axiom:} ``If a task can be fully automated to a
+  satisfactory degree, our job is to find the next, more valuable task
+  up the chain. We use AI to augment our judgment, not replace it. The
+  goal is to operate at a higher level of abstraction.''
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{\textbf{Part 2: The Practitioner's Stack (The ``How'')}}
+\phantomsection\label{part-2-the-practitioners-stack-the-how}
+\emph{(Goal: Showcase your personal toolkit not as a random collection
+of apps, but as a deliberately architected stack for achieving maximum
+leverage.)}
+
+\begin{block}{\textbf{A. My Stack for Leverage: A 4-Stage Context
+Engineering Pipeline}}
+\phantomsection\label{a.-my-stack-for-leverage-a-4-stage-context-engineering-pipeline}
+\emph{(Core Message: Context is gold. Without good context engineering,
+prompt engineering is irrelevant. But here's the deeper truth---it's not
+just prompt engineering. All AI outputs are completely irrelevant
+without good context. Context poisoning is the real threat. This isn't a
+random collection of tools; it's a deliberate, four-stage pipeline for
+manufacturing perfect, context-rich prompts. High-quality output
+requires high-quality input, and this is the system I use to create
+it.)}
+
+\textbf{Key Quotes to Reference:} - \emph{``Context is everything, yet
+context is what's missing.''} - This paradox captures the challenge
+perfectly. Context determines everything about AI quality, yet it's
+consistently the weakest link in most people's AI workflows. -
+\emph{``The whole world is an intelligence game.''} - A friend's insight
+that became crystal clear once I understood context engineering. In
+business, in technology, in relationships---it's all about having better
+information and context than the other party. AI amplifies this reality
+exponentially.
+
+\textbf{Speaking Note:} ``These quotes didn't make sense to me until I
+got deep into context engineering. Now I realize that context
+engineering isn't just a technical skill---it's the fundamental skill
+for the AI age. Bad context doesn't just give you bad outputs; it
+poisons your entire decision-making process.''
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Stage 1: Context Inception (Wispr Flow)}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{Pitch:} ``The entire process starts with high-bandwidth
+    thought capture. Keyboards are a bottleneck. Wispr Flow is my
+    primary compute interface. Wispr allows you to talk/dictate/speak
+    into any textbox whether on your computer or phone. Already, this is
+    a significant speed advancement, People will naturally output more
+    text if the input mechanism is speech instead of typing on a
+    keyboard. Now, where this goes from a handy daily tool to the base
+    of context engineering is that you can use Wispr Flow for turning
+    unstructured verbal brainstorming into structured, AI-ready text.
+    Your thoughts, you just speak, verbalize in real-time, transcribed
+    become a digital asset---the raw material for the entire AI
+    workflow.''\\
+  \item
+    \textbf{Application:} ``This is foundational. I use it for
+    everything from drafting emails to capturing real-time thoughts
+    while walking through a house, or more importantly, talking through
+    a complex systems design and architecture problem at work. The
+    output is a repository of authentic, high-fidelity text that becomes
+    our initial, unvarnished context. Now, you might ask: Hey Mo, you're
+    telling me I speak and this technology will listen to me and
+    transcribe my thoughts, and maybe I'll even use AI to help structure
+    those thoughts? Okay, I get you. Well Mo, where do I store all these
+    documents? Do I store them in Google Docs or Word? Let's talk about
+    context storage, and management.''
+  \item
+    \textbf{Volume:} \textasciitilde100K words/month of voice dictation
+  \item
+    \textbf{Key Insight:} Your thoughts become digital assets that can
+    be processed and leveraged by AI
+  \end{itemize}
+\item
+  \textbf{Stage 2: Context Storage \& Management (Git Markdown
+  Repository as Second Brain)}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{Pitch:} ``This is where we ensure deterministic, reliable
+    context instead of relying on probabilistic MCP server calls. I
+    download all emails with individual partners, clients, or business
+    contacts into folders, then use Claude Code or Gemini CLI to flatten
+    all the emails into markdown files that get stored in my Git
+    repository.''\\
+  \item
+    \textbf{Why GitHub over Notion:} ``I used to put everything in
+    Notion, but the Notion MCP server is too finicky. Whenever you're
+    using an MCP server, you're relying on probabilistic outcomes.
+    Instead of asking AI to always review the latest emails with someone
+    through MCP tool calls---which you sometimes don't know if it messes
+    up or not---I just have a file of all the emails. That way it's
+    deterministic, the data is there, and all AI has to do is help me
+    with the task I'm asking, which is usually a question about the
+    context.''
+  \item
+    \textbf{Application:} Email histories become searchable, reliable
+    context files that AI can always access
+  \item
+    \textbf{Technical Details:} Download email folders → AI flattens to
+    markdown → commit to GitHub repo
+  \item
+    \textbf{Context Examples:} Project goals, business insights, client
+    data, personal career strategy, email histories, call transcripts
+  \end{itemize}
+\item
+  \textbf{Stage 3: Context Refinement \& Enrichment (Agentic Partners)}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{Pitch:} ``Raw text and stored context are just starting
+    points. The next step is to refine and structure it. I use agentic
+    partners like Claude Code and Gemini CLI as infinitely patient
+    junior developers. They take the raw context from Wispr plus the
+    stored context files, organize it, enrich it with research, and
+    build it into more robust, analytical documents that are ready for
+    complex queries.''\\
+  \item
+    \textbf{Application:} ``For that house tour, the agent transforms my
+    rambling notes into a structured pros/cons list and researches
+    neighborhood comps and school ratings. For a coding problem, it
+    converts my verbal stream-of-consciousness into a preliminary bug
+    report, complete with code snippets and a list of potential root
+    causes. For business relationships, it can cross-reference my notes
+    with the complete email history to provide strategic insights.''
+  \end{itemize}
+\item
+  \textbf{Stage 4: Context Assembly \& Orchestration (Prompt Tower)}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{Pitch:} ``This is the final and most powerful step where we
+    achieve insurmountable leverage. Prompt Tower is the ultimate
+    context assembler. It takes all the disparate pieces of context
+    we've created and refined---the Wispr transcripts, the
+    agent-generated reports, the flattened email files, relevant code
+    files, API documentation, meeting notes---and allows me to
+    orchestrate the perfect, holistic prompt.''\\
+  \item
+    \textbf{Application:} ``For strategic call preparation---my most
+    common use case---I select all past call transcripts, the flattened
+    file of our email history, and a natural-language `status' file that
+    captures the nuances of the relationship that a tool like Monday.com
+    can't. My prompt is then simple: `Based on all this, what are my
+    next steps? And critically, what potential dissatisfactions do I
+    need to surface and address?' For the house purchase, I can select
+    the refined reports for three properties, add a context file with my
+    financial data, and another with my family's requirements. For a
+    software engineering problem, I can select the bug report, the
+    relevant codebase files, and transcripts from team calls discussing
+    the issue. Prompt Tower assembles all of this into one massive,
+    perfectly-formed prompt that gives the AI a complete, 360-degree
+    view of the problem, enabling it to provide a deeply insightful and
+    immediately useful solution. Typically, these prompts end up in
+    Gemini because of their 1 million token context. My submissions are
+    typically north of 100,000 tokens.''
+  \item
+    \textbf{Technical Features:} VSCode extension, file selection
+    interface, custom prompt prefixes/suffixes, one-click clipboard copy
+  \item
+    \textbf{Economic Advantage:} Gemini's flat consumer fee allows
+    unlimited iteration and prompt optimization
+  \end{itemize}
+\end{itemize}
+\end{block}
+
+\begin{block}{\textbf{B. The Demos: Primitives for Building Systems}}
+\phantomsection\label{b.-the-demos-primitives-for-building-systems}
+\emph{(Goal: Present your demos as case studies in applying engineering
+principles to automate toil.)}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Demo 1: The Modular Resume System (A Case Study in
+  ``Documentation as Code'')}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{The Pitch:} ``We all hate updating documentation because
+    it's manual, repetitive, and prone to error. I applied a software
+    engineering mindset to a classic business problem: the resume. This
+    is a system built on modular, version-controlled components---our
+    single source of truth---which are then assembled by templates and
+    automated with build scripts. The result is publication-quality,
+    ATS-optimized, and role-specific outputs generated on the fly.''\\
+  \item
+    \textbf{The Connection:} ``This is a powerful principle. Now,
+    imagine applying it to your team's technical documentation, API
+    specs, or customer-facing reports. We can stop manually writing docs
+    and start generating them from the source, ensuring they are always
+    accurate and up-to-date. This is how we solve the documentation
+    problem for good.''\\
+  \item
+    \emph{(Showcase the resume-system/ demo. Run the build script.)}\\
+  \end{itemize}
+\item
+  \textbf{Demo 2: AI-Assisted Technical Analysis (Automating the ``Last
+  Mile'')}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{The Pitch:} ``This demonstrates the output of such a system,
+    automating the final, painful step of presentation. It combines
+    AI-driven content generation with the typographic precision of
+    LaTeX. Notice the programmatically generated TikZ diagrams---no more
+    struggling with Visio or Lucidchart. This entire professional-grade
+    report was rendered from simple Markdown files with a single
+    command: quarto render.''\\
+  \item
+    \textbf{The Connection:} ``This is how we automate the `last mile'
+    of technical communication. It ensures that our hard work is
+    presented with the professionalism it deserves, without hours of
+    manual formatting. It allows us to focus on the substance of our
+    analysis, knowing the system will handle the world-class
+    presentation.''\\
+  \item
+    \emph{(Showcase the report-generation/ demo. Display the .qmd file
+    next to the final PDF.)}\\
+  \end{itemize}
+\item
+  \textbf{Demo 3: The AI-Powered Feedback Loop (Systematizing
+  Self-Improvement)}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{The Pitch:} ``As engineers, we're great at getting feedback
+    on our code, but often terrible at getting objective feedback on our
+    communication. I treat this as another engineering problem. By
+    recording and transcribing my professional calls (with consent), I
+    create a dataset of my own performance. I then use AI to analyze it,
+    asking critical questions: `Where are my communication gaps?', `How
+    could I have handled this negotiation better?', `What is the
+    sentiment of this call?' This has been one of the most high-leverage
+    ways to improve myself. I will often ask AI for book
+    recommendations---whether it is a new domain I'm getting into (like
+    a certain sector of private equity), a specific communication skill
+    that I'm interested in developing, or an interpersonal skill.''\\
+  \item
+    \textbf{The Connection:} ``This system provides a data-driven,
+    objective feedback loop for the soft skills that determine career
+    velocity. It helped me identify a tendency to be overly
+    accommodative in negotiations and gave me the confidence to advocate
+    for myself more effectively. It's a way to systematically debug our
+    own professional performance, addressing the imposter syndrome that
+    holds so many of us back.''\\
+  \end{itemize}
+\item
+  \textbf{Demo 4: The AI Vocabulary Coach (Extending Expertise
+  Infinitely)}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{The Pitch:} ``We often hit a plateau in our professional
+    language. This system, inspired by legendary grammarians like Norman
+    Lewis and Tom Heehler, acts as a personalized vocabulary coach. I
+    feed it my call transcripts, and it analyzes my language to identify
+    words just at the edge of my current vernacular, making my
+    communication more precise and impactful. The prompts for this are
+    open-sourced in my GitHub.''\\
+  \item
+    \textbf{The Connection:} ``This demonstrates a profound principle:
+    AI can take a finite resource---like the knowledge in a beloved book
+    or the expertise of a mentor who is no longer with us---and extend
+    its value infinitely. It transforms a static resource into a
+    dynamic, personalized learning engine that continuously refines our
+    most critical tool: our language. This is how we systematize not
+    just our work, but our own growth.''\\
+  \end{itemize}
+\item
+  \textbf{Demo 5: The Automated Networking Strategist (Building an
+  AI-Powered CRM)}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{The Pitch:} ``Networking is often reactive and based on
+    memory. This system makes it proactive and strategic. When I get new
+    connections on LinkedIn, I feed them to an agent. The agent
+    researches each person and cross-references them against my personal
+    context files---my career goals, business objectives, and areas of
+    interest.''\\
+  \item
+    \textbf{The Connection:} ``The AI acts as a strategic filter. It
+    reconciles the public data about a person with my private goals to
+    determine if they are a relevant connection. If they are, it
+    automatically adds them to my personal CRM---a simple Markdown
+    database---with notes on why they're relevant. This transforms a
+    passive activity into an automated, high-leverage networking
+    strategy, ensuring I'm building a valuable network with almost zero
+    manual effort.''\\
+  \item
+    \emph{(Show screenshot of the AI-generated CRM entry)}
+  \end{itemize}
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{\textbf{Part 3: The Paradigm Shift (The ``What If'')}}
+\phantomsection\label{part-3-the-paradigm-shift-the-what-if}
+\emph{(Goal: Connect your system directly to the daily work of the
+audience and present a new, more powerful way of operating.)}
+
+\begin{block}{\textbf{A. The New Paradigm: From Writing Code to
+Directing Code Generation}}
+\phantomsection\label{a.-the-new-paradigm-from-writing-code-to-directing-code-generation}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Core Message:} This is a fundamental shift in our role and
+  where we provide value. The bottleneck is no longer typing speed or
+  syntax knowledge; it's the quality of our thinking, our ability to
+  design robust systems, and our rigor in verifying the output. The
+  senior engineer's primary role becomes that of an architect and the
+  final checkpoint for quality and correctness.\\
+\item
+  \textbf{The Anthropic PR is Your Proof Point:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{Pitch:} ``This isn't a toy or a theoretical exercise. This
+    is how high-performance teams are already operating. Anthropic
+    successfully merged a 22,000-line, Claude-generated PR into their
+    production RL systems. How? By shifting their entire review process
+    away from painstaking line-by-line code review to a higher-level
+    focus on behavioral verification and system-level testing.''\\
+  \item
+    \emph{(Show the ``Vibe Coding'' slides from index.qmd)}
+  \end{itemize}
+\end{itemize}
+\end{block}
+
+\begin{block}{\textbf{B. Principles for the New Paradigm}}
+\phantomsection\label{b.-principles-for-the-new-paradigm}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{1. Change the Abstraction:} Treat the AI like a
+  hyper-productive team you manage. Your job is to write the spec, not
+  the code. Focus on acceptance tests, stress tests, and verifiable
+  system behaviors.\\
+\item
+  \textbf{2. Constrain the Blast Radius:} Start with ``leaf
+  nodes''---isolated features, UI components, or scripts with no
+  dependencies. Keep the core, foundational architecture human-owned and
+  rigorously reviewed.\\
+\item
+  \textbf{3. Act as the Model's PM:} Spend 15-20 minutes creating a
+  comprehensive brief. Your leverage comes from the quality of your
+  direction---providing repository maps, context, constraints, and clear
+  success criteria.\\
+\item
+  \textbf{4. Build for Verifiability:} Design for black-box testing. If
+  you can't verify the output with a deterministic input/output contract
+  and robust testing, you can't safely use the generated code.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{\textbf{Conclusion \& Discussion}}
+\phantomsection\label{conclusion-discussion}
+\begin{block}{\textbf{A. The Cohesive System}}
+\phantomsection\label{a.-the-cohesive-system}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Closing Statement:} ``These aren't just isolated tricks or
+  clever hacks. They are components of a cohesive system for
+  professional practice, built on engineering principles. This is how I
+  operate. It's a system designed to maximize the time we spend on
+  interesting, high-impact problems and mercilessly eliminate the time
+  we spend on everything else.''\\
+\item
+  \textbf{Subtle Positioning:} This subtly positions you as the expert
+  they should turn to when they want to implement these ideas and build
+  their own systems for leverage.
+\end{itemize}
+\end{block}
+
+\begin{block}{\textbf{B. Answering Our Opening Questions}}
+\phantomsection\label{b.-answering-our-opening-questions}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{SDLC Change:} Engineers become architects and product managers
+  for AI agents. The most critical skill is no longer writing code, but
+  designing systems and verifying behavior. Review processes must shift
+  from code-level to behavior-level.\\
+\item
+  \textbf{QA Evolution:} QA becomes even more critical, moving towards
+  systems thinking, complex integration testing, and sophisticated
+  black-box verification to validate business logic at scale.\\
+\item
+  \textbf{Team Ratios:} Senior architects who own the fundamental design
+  and can maintain a coherent vision across an AI-augmented team become
+  exponentially more valuable. The ratio of ``coders'' to ``architects''
+  will likely shift.
+\end{itemize}
+\end{block}
+
+\begin{block}{\textbf{C. Open Discussion}}
+\phantomsection\label{c.-open-discussion}
+\begin{itemize}
+\tightlist
+\item
+  ``Now, back to you. What shifts do you see in your teams? What part of
+  your process would you automate first? Let's talk.''
+\end{itemize}
+\end{block}
+
+\begin{block}{\textbf{D. Final Slide: Resources}}
+\phantomsection\label{d.-final-slide-resources}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Thank You}\\
+\item
+  Contact: {[}Your Email / LinkedIn{]}\\
+\item
+  \textbf{Open Source Repository:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    {[}Link to your Git Repository{]}\\
+  \item
+    Includes: This Presentation, Report Generation Demo, Modular Resume
+    System, Prompt Library.
+  \end{itemize}
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+
+
+\end{document}
