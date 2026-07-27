@@ -1,12 +1,18 @@
-Transcribe this audio file as completely and accurately as possible.
+Transcribe the audio as completely and accurately as possible.
 
 Requirements:
-- Produce a verbatim transcript to the best of your ability
-- Use context clues to infer speaker changes and assign consistent speaker labels when possible
-- If a speaker’s identity is uncertain, label them conservatively, for example Speaker 1, Speaker 2
-- Do not summarize, omit, or clean up the conversation
-- Preserve interruptions, false starts, filler words, and unfinished sentences when audible
-- Mark unclear or inaudible sections with timestamps and best-effort notes, for example [inaudible 00:12:43] or [unclear: possible name]
-- Use surrounding context to make the strongest justified guess for difficult words, names, or phrases, but never invent content
-- Keep formatting clean and readable
-- If the audio quality is poor, still attempt a full transcript rather than giving up
+
+- Produce a verbatim transcript without summarizing, omitting, paraphrasing, or polishing the conversation.
+- Preserve audible filler words, repetitions, false starts, interruptions, corrections, and unfinished sentences.
+- Do not include timestamps anywhere in the transcript.
+- Use the participant names and background information provided after these instructions to help identify speakers.
+- Assign each identified participant a short, unique label—preferably their initials—and use that label consistently throughout the transcript.
+- Include a compact speaker key once at the beginning, then use only the short labels. Do not repeatedly write participants’ full names or background information.
+- Infer speaker changes from voices, context, forms of address, and the supplied participant information.
+- Do not force an attribution when the evidence is weak. Use compact neutral labels such as `S1`, `S2`, or `U1` for unidentified speakers.
+- Mark audio that cannot be understood as `[inaudible]`.
+- Mark uncertain wording as `[unclear]` or, when a plausible reading would be helpful, `[unclear: possible wording]`.
+- Use surrounding context to make the strongest justified interpretation of difficult words, names, and phrases, but never invent content.
+- Format each speaker turn as a separate paragraph using `LABEL: speech`.
+- Keep the formatting compact and readable. Do not add commentary, analysis, summaries, introductions, conclusions, or redundant metadata.
+- Even if the audio quality is poor, make a best-effort attempt to transcribe the entire recording.
