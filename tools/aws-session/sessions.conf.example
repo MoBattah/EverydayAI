@@ -1,0 +1,14 @@
+# aws-session registry. One line per alias; lines starting with # are ignored.
+# Copy to ~/.config/aws-session/sessions.conf and chmod 600.
+#
+# alias        The profile name in ~/.aws/config, and the name passed to aws-session.
+# account_id   The account this alias must resolve to. Any other account is an error.
+# region       Written into the env file as AWS_REGION and AWS_DEFAULT_REGION.
+# sso_session  The [sso-session <name>] block in ~/.aws/config. Leave it empty for a
+#              paste-only alias (break-glass credentials, no SSO).
+# description  Free text shown by `aws-session list`.
+#
+# alias      | account_id   | region    | sso_session | description
+staging      | 111111111111 | us-east-1 | example     | Staging, AdministratorAccess
+prod-read    | 222222222222 | us-east-1 | example     | Production, ReadOnlyAccess
+vendor       | 333333333333 | eu-west-1 |             | Third-party account, pasted credentials only
