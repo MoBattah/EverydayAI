@@ -1,0 +1,391 @@
+#!/usr/bin/env bash
+# aws-session: AWS credentials across several accounts, SSO first, for shells that coding
+# agents drive.
+#
+# Normal path: credentials come from IAM Identity Center (`aws sso login`) and refresh
+# themselves. Break-glass path: credentials a person pastes in (`aws-session save`).
+#
+# Either way the credentials are exposed as a sourceable env file at a stable path per alias:
+#
+#     source "$(aws-session path staging)"
+#
+# For an SSO alias that file is a cache, regenerated from the SSO token on demand. For a
+# paste-only alias it holds the pasted credentials, and `save` will not overwrite them while
+# they still work.
+#
+# Usage:
+#   aws-session list                 Show every alias: account, region, source, status
+#   aws-session login <alias>        Browser login for the alias's SSO session
+#   aws-session check <alias>        Exit 0 if credentials are usable; print the account id
+#   aws-session sso-ok <alias>       Exit 0 if the alias's SSO token is alive (for launchers)
+#   aws-session path <alias>         Print a sourceable env file path (regenerates it)
+#   aws-session exec <alias> -- <c>  Run <c> with the alias's credentials loaded
+#   aws-session save <alias> [opts]  Break-glass: install pasted credentials from stdin
+#     -f, --file <path>   Read from a file instead of stdin
+#         --region <r>    Override the region (default: from the registry)
+#         --force         Overwrite pasted credentials that still work
+#
+# Environment:
+#   AWS_SESSION_CONF           Registry (default: $XDG_CONFIG_HOME/aws-session/sessions.conf,
+#                              or ~/.config/aws-session/sessions.conf)
+#   AWS_SESSION_DIR            Where env files are written (default: the registry's directory)
+#   AWS_SESSION_MIN_TOKEN_LEN  Shortest session token `save` accepts (default: 400)
+
+# WHY every AWS call runs with the ambient AWS_* variables cleared:
+#   AWS_ACCESS_KEY_ID / AWS_SECRET_ACCESS_KEY / AWS_SESSION_TOKEN in the environment take
+#   precedence over AWS_PROFILE. A shell still holding one account's credentials would
+#   answer for that account while naming another profile. Clearing them leaves the profile,
+#   or the env file, as the only source.
+
+set -uo pipefail
+
+CONF="${AWS_SESSION_CONF:-${XDG_CONFIG_HOME:-$HOME/.config}/aws-session/sessions.conf}"
+DIR="${AWS_SESSION_DIR:-$(dirname "$CONF")}"
+MIN_TOKEN_LEN="${AWS_SESSION_MIN_TOKEN_LEN:-400}"
+MARKER='# generated-by: aws-session'
+
+# Scratch files; the EXIT trap removes whatever a failed run left behind.
+_raw=""; _tmp=""
+trap 'rm -f "$_raw" "$_tmp" 2>/dev/null' EXIT
+
+die()  { printf 'aws-session: %s\n' "$*" >&2; exit 1; }
+note() { printf 'aws-session: %s\n' "$*" >&2; }
+
+creds_path() { printf '%s/aws-session-env-%s.sh\n' "$DIR" "$1"; }
+
+# Credential files live here, so the directory is private and temp files are created inside
+# it: the final rename is atomic, and nothing lands in a shared /tmp.
+ensure_dir() {
+  if [ ! -d "$DIR" ]; then
+    mkdir -p "$DIR" || die "cannot create $DIR"
+    chmod 700 "$DIR"
+  fi
+}
+
+private_tmp() {
+  local f
+  f="$(mktemp "$DIR/.aws-session.XXXXXX")" || die "cannot create a temp file in $DIR"
+  chmod 600 "$f"
+  printf '%s\n' "$f"
+}
+
+clear_ambient() {
+  unset AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN \
+        AWS_PROFILE AWS_REGION AWS_DEFAULT_REGION AWS_CREDENTIAL_EXPIRATION
+}
+
+aws_clean() { ( clear_ambient; aws "$@" ); }
+
+# Registry lookup. $2: 2=account_id 3=region 4=sso_session 5=description
+conf_field() {
+  [ -r "$CONF" ] || return 1
+  awk -F'|' -v a="$1" -v f="$2" '
+    /^[[:space:]]*#/ || /^[[:space:]]*$/ { next }
+    { gsub(/^[ \t]+|[ \t]+$/, "", $1)
+      if ($1 == a) { gsub(/^[ \t]+|[ \t]+$/, "", $f); print $f; exit } }' "$CONF"
+}
+
+conf_aliases() {
+  [ -r "$CONF" ] || return 0
+  awk -F'|' '/^[[:space:]]*#/ || /^[[:space:]]*$/ { next }
+             { gsub(/^[ \t]+|[ \t]+$/, "", $1); print $1 }' "$CONF"
+}
+
+require_conf() {
+  [ -r "$CONF" ] || die "no registry at $CONF; start from sessions.conf.example"
+}
+
+# An alias is known when the registry pins an account for it. The name becomes part of a
+# file path, so it is restricted to a safe character set.
+require_alias() {
+  require_conf
+  case "$1" in
+    ''|*[!A-Za-z0-9._-]*) die "invalid alias '$1'" ;;
+  esac
+  [ -n "$(conf_field "$1" 2)" ] || die "unknown alias '$1'; see: aws-session list"
+}
+
+# Account id via the SSO profile, or empty if the SSO token is missing or expired.
+sso_account() {
+  aws_clean sts get-caller-identity --profile "$1" --query Account --output text 2>/dev/null
+}
+
+# Account id for an env file, or empty if it is missing or its credentials have expired.
+file_account() {
+  [ -r "$1" ] || return 1
+  ( clear_ambient
+    set -a
+    # shellcheck source=/dev/null
+    . "$1" 2>/dev/null
+    set +a
+    aws sts get-caller-identity --query Account --output text 2>/dev/null )
+}
+
+is_generated() { [ -r "$1" ] && head -1 "$1" | grep -q "^$MARKER"; }
+
+# Fail loudly if the account we got is not the account the registry pins.
+assert_account() {
+  local alias="$1" got="$2" want
+  want="$(conf_field "$alias" 2)"
+  if [ -n "$want" ] && [ "$got" != "$want" ]; then
+    die "WRONG ACCOUNT: '$alias' resolved to $got but the registry expects $want. Do not deploy."
+  fi
+}
+
+# Write an SSO alias's credentials into its cache file. $2 is the account already verified.
+regen_from_sso() {
+  local alias="$1" acct="$2" dest region
+  dest="$(creds_path "$alias")"
+  region="$(conf_field "$alias" 3)"
+  ensure_dir
+  _tmp="$(private_tmp)" || exit 1
+  printf '%s %s (account %s): regenerated on demand, do not hand-edit\n' \
+    "$MARKER" "$alias" "$acct" > "$_tmp"
+  if ! aws_clean configure export-credentials --profile "$alias" --format env >> "$_tmp" 2>/dev/null; then
+    die "could not export credentials for '$alias'; run: aws-session login $alias"
+  fi
+  # export-credentials emits no region, and some accounts only work in one (an SCP can deny
+  # every other region), so the registry's region is appended.
+  if [ -n "$region" ]; then
+    printf 'export AWS_REGION=%s\nexport AWS_DEFAULT_REGION=%s\n' "$region" "$region" >> "$_tmp"
+  fi
+  mv -f "$_tmp" "$dest" || die "cannot write $dest"
+  _tmp=""
+}
+
+# Set RESOLVED to a sourceable env file for the alias, or exit with the reason. Runs in the
+# calling shell, so the EXIT trap still cleans up after a failure.
+RESOLVED=""
+resolve_path() {
+  local alias="$1" sso dest acct
+  sso="$(conf_field "$alias" 4)"; dest="$(creds_path "$alias")"
+
+  if [ -z "$sso" ]; then
+    [ -r "$dest" ] || die "no credentials for '$alias'; paste some: aws-session save $alias --file <paste>"
+    RESOLVED="$dest"; return 0
+  fi
+
+  acct="$(sso_account "$alias")"
+  if [ -n "$acct" ]; then
+    assert_account "$alias" "$acct"
+    regen_from_sso "$alias" "$acct"
+    RESOLVED="$dest"; return 0
+  fi
+
+  # The SSO token is dead. Pasted break-glass credentials in the same file are used if they
+  # work, and are held to the same pinned account.
+  if ! is_generated "$dest"; then
+    acct="$(file_account "$dest")"
+    if [ -n "$acct" ]; then
+      assert_account "$alias" "$acct"
+      note "SSO expired for $alias; using pasted break-glass credentials"
+      RESOLVED="$dest"; return 0
+    fi
+  fi
+  die "SSO session for '$alias' is missing or expired; run: aws-session login $alias"
+}
+
+cmd_login() {
+  [ $# -eq 1 ] || die "usage: aws-session login <alias>"
+  require_alias "$1"
+  local sso a acct
+  sso="$(conf_field "$1" 4)"
+  [ -n "$sso" ] || die "'$1' is paste-only (no sso_session in $CONF)"
+  note "opening browser login for SSO session $sso"
+  aws_clean sso login --sso-session "$sso" || die "sso login failed for session '$sso'"
+  # One login covers every alias that shares the sso-session.
+  for a in $(conf_aliases); do
+    if [ "$(conf_field "$a" 4)" = "$sso" ]; then
+      acct="$(sso_account "$a")"
+      printf '  %-14s %s\n' "$a" "${acct:-(no assignment)}" >&2
+    fi
+  done
+}
+
+# Exit 0 only if this alias's SSO token is alive. Launchers use it to decide whether to open a
+# browser login. Pasted break-glass credentials are ignored on purpose: while they work they
+# would otherwise keep the alias off SSO indefinitely.
+cmd_sso_ok() {
+  [ $# -eq 1 ] || die "usage: aws-session sso-ok <alias>"
+  require_alias "$1"
+  [ -n "$(conf_field "$1" 4)" ] || return 1
+  local acct
+  acct="$(sso_account "$1")"
+  [ -n "$acct" ] || return 1
+  assert_account "$1" "$acct"
+}
+
+cmd_path() {
+  [ $# -eq 1 ] || die "usage: aws-session path <alias>"
+  require_alias "$1"
+  resolve_path "$1"
+  printf '%s\n' "$RESOLVED"
+}
+
+# Run a command with the alias's credentials loaded. This is the form for agent sandboxes
+# that refuse `source "$(...)" && cmd`: it is one plain command, and the credentials never
+# appear on a command line.
+cmd_exec() {
+  [ $# -ge 1 ] || die "usage: aws-session exec <alias> [--] <command> [args...]"
+  local alias="$1"; shift
+  if [ "${1:-}" = "--" ]; then shift; fi
+  [ $# -ge 1 ] || die "usage: aws-session exec <alias> [--] <command> [args...]"
+  require_alias "$alias"
+  resolve_path "$alias"
+  clear_ambient
+  set -a
+  # shellcheck source=/dev/null
+  . "$RESOLVED"
+  set +a
+  exec "$@"
+}
+
+cmd_check() {
+  [ $# -eq 1 ] || die "usage: aws-session check <alias>"
+  require_alias "$1"
+  local sso acct dest
+  sso="$(conf_field "$1" 4)"; dest="$(creds_path "$1")"
+  if [ -n "$sso" ]; then
+    acct="$(sso_account "$1")"
+    if [ -z "$acct" ] && ! is_generated "$dest"; then
+      acct="$(file_account "$dest")"
+    fi
+    [ -n "$acct" ] || die "SSO session for '$1' is missing or expired; run: aws-session login $1"
+  else
+    [ -r "$dest" ] || die "no credentials for '$1' at $dest"
+    acct="$(file_account "$dest")"
+    [ -n "$acct" ] || die "credentials for '$1' have expired; paste fresh ones: aws-session save $1"
+  fi
+  assert_account "$1" "$acct"
+  printf '%s\n' "$acct"
+}
+
+cmd_list() {
+  require_conf
+  printf '%-14s %-14s %-10s %-7s %-9s %s\n' ALIAS ACCOUNT REGION SOURCE STATUS DESCRIPTION
+  local a f acct want region desc sso status origin
+  for a in $(conf_aliases); do
+    f="$(creds_path "$a")"
+    want="$(conf_field "$a" 2)"; region="$(conf_field "$a" 3)"
+    sso="$(conf_field "$a" 4)"; desc="$(conf_field "$a" 5)"
+    acct=""; status='valid'; origin='sso'
+    if [ -n "$sso" ]; then
+      acct="$(sso_account "$a")"
+      if [ -z "$acct" ]; then
+        if ! is_generated "$f"; then acct="$(file_account "$f")"; fi
+        if [ -n "$acct" ]; then status='paste-bg'; origin='paste'; else status='login'; fi
+      fi
+    else
+      origin='paste'
+      if [ ! -r "$f" ]; then
+        status=missing
+      else
+        acct="$(file_account "$f")"
+        [ -n "$acct" ] || status=expired
+      fi
+    fi
+    if [ -n "$acct" ] && [ -n "$want" ] && [ "$acct" != "$want" ]; then status=MISMATCH; fi
+    printf '%-14s %-14s %-10s %-7s %-9s %s\n' "$a" "${acct:--}" "${region:--}" "$origin" "$status" "$desc"
+  done
+  printf '\nstatus: valid=usable  login=run aws-session login <alias>  paste-bg=break-glass credentials in use\n'
+}
+
+# Pull one credential value out of a paste: bash exports, bare KEY=VAL, ini
+# (aws_access_key_id = ...), PowerShell $Env:KEY="...", or `aws sts assume-role` JSON.
+# $1 is a perl alternation of the names the value may appear under; $2 is the file.
+extract() {
+  # shellcheck disable=SC2016  # the $1 inside single quotes is perl's capture group
+  perl -ne 'if (/\b(?:'"$1"')\b["\x27]?\s*[=:]\s*["\x27]?([A-Za-z0-9\/+=_.-]+)/i) { print "$1\n"; exit }' "$2"
+}
+
+cmd_save() {
+  [ $# -ge 1 ] || die "usage: aws-session save <alias> [--file F] [--region R] [--force]"
+  local alias="$1"; shift
+  local src="" region="" force=0
+  while [ $# -gt 0 ]; do
+    case "$1" in
+      -f|--file) [ $# -ge 2 ] || die "$1 needs a path"; src="$2"; shift 2 ;;
+      --region)  [ $# -ge 2 ] || die "--region needs a value"; region="$2"; shift 2 ;;
+      --force)   force=1; shift ;;
+      *) die "unknown option: $1" ;;
+    esac
+  done
+  require_alias "$alias"
+  case "$MIN_TOKEN_LEN" in
+    ''|*[!0-9]*) die "AWS_SESSION_MIN_TOKEN_LEN must be a number" ;;
+  esac
+  ensure_dir
+
+  local dest
+  dest="$(creds_path "$alias")"
+  _raw="$(private_tmp)" || exit 1
+  if [ -n "$src" ]; then
+    cat -- "$src" > "$_raw" || die "cannot read $src"
+  else
+    cat > "$_raw"
+  fi
+  [ -s "$_raw" ] || die "no input; pipe the pasted credentials in, or use --file"
+
+  local kid secret token
+  kid="$(extract 'AWS_ACCESS_KEY_ID|AccessKeyId' "$_raw")"
+  secret="$(extract 'AWS_SECRET_ACCESS_KEY|SecretAccessKey' "$_raw")"
+  token="$(extract 'AWS_SESSION_TOKEN|SessionToken' "$_raw")"
+  [ -n "$kid" ] && [ -n "$secret" ] && [ -n "$token" ] \
+    || die "could not parse all three of AWS_ACCESS_KEY_ID / AWS_SECRET_ACCESS_KEY / AWS_SESSION_TOKEN"
+  # A token retyped or copied by hand tends to lose a chunk, and then fails later with an
+  # opaque signature error. Lower AWS_SESSION_MIN_TOKEN_LEN if your tokens are shorter.
+  [ "${#token}" -ge "$MIN_TOKEN_LEN" ] \
+    || die "AWS_SESSION_TOKEN is only ${#token} chars and looks truncated; re-paste it verbatim"
+
+  [ -n "$region" ] || region="$(conf_field "$alias" 3)"
+  [ -n "$region" ] || die "no region for '$alias'; pass --region"
+
+  # Verify the pasted credentials before touching anything on disk. They reach the aws CLI
+  # through its environment, never its arguments.
+  local new_acct
+  new_acct="$( clear_ambient
+    AWS_ACCESS_KEY_ID="$kid" AWS_SECRET_ACCESS_KEY="$secret" AWS_SESSION_TOKEN="$token" \
+      AWS_REGION="$region" aws sts get-caller-identity --query Account --output text 2>/dev/null )"
+  [ -n "$new_acct" ] || die "the pasted credentials are not valid (expired already, or truncated)"
+
+  # Cross-account guard: an alias is pinned to exactly one account.
+  local want
+  want="$(conf_field "$alias" 2)"
+  if [ "$new_acct" != "$want" ]; then
+    die "refusing: these credentials are for $new_acct but '$alias' is account $want. Save them under the right alias."
+  fi
+
+  # Never overwrite pasted credentials that still work: another agent may be using them. A
+  # generated SSO cache file is disposable, so replacing that is always fine.
+  if [ "$force" -eq 0 ] && [ -r "$dest" ] && ! is_generated "$dest"; then
+    local cur
+    cur="$(file_account "$dest")"
+    if [ -n "$cur" ]; then
+      die "'$alias' already holds working pasted credentials for $cur; another agent may be using them. Use --force to replace."
+    fi
+  fi
+
+  _tmp="$(private_tmp)" || exit 1
+  { printf 'export AWS_ACCESS_KEY_ID=%s\n' "$kid"
+    printf 'export AWS_SECRET_ACCESS_KEY=%s\n' "$secret"
+    printf 'export AWS_SESSION_TOKEN=%s\n' "$token"
+    printf 'export AWS_REGION=%s\n' "$region"
+    printf 'export AWS_DEFAULT_REGION=%s\n' "$region"; } > "$_tmp"
+  mv -f "$_tmp" "$dest" || die "cannot write $dest"
+  _tmp=""
+  printf 'aws-session: saved %s (account %s, %s) as break-glass pasted credentials\n' "$alias" "$new_acct" "$region"
+}
+
+case "${1:-}" in
+  list)   shift; cmd_list "$@" ;;
+  login)  shift; cmd_login "$@" ;;
+  check)  shift; cmd_check "$@" ;;
+  sso-ok) shift; cmd_sso_ok "$@" ;;
+  path)   shift; cmd_path "$@" ;;
+  exec)   shift; cmd_exec "$@" ;;
+  save)   shift; cmd_save "$@" ;;
+  ''|-h|--help|help)
+    # The header comment above, down to the first blank line, is the help text.
+    awk 'NR == 1 { next } /^#/ { sub(/^# ?/, ""); print; next } { exit }' "$0" ;;
+  *) die "unknown command '$1'. Try: list, login, check, sso-ok, path, exec, save" ;;
+esac

@@ -27,7 +27,7 @@ This repository contains five practical demonstrations that illustrate engineeri
 *   **Automated CRM Enrichment: Systematizing Serendipity**: Connection research and relationship mapping
 *   **Modular Resume System: Documentation as Code**: [AI Consultant PDF](demos/alpine-ai/resume-system/outputs/ai-consultant/ai-consultant-resume.pdf) | [Tech Leadership PDF](demos/alpine-ai/resume-system/outputs/tech-leadership/tech-leadership-resume.pdf)
 
-The collection is organized into two primary sections: `demos` and `prompts`, demonstrating the complete context engineering workflow.
+The collection is organized into two primary sections: `demos` and `prompts`, demonstrating the complete context engineering workflow. A third, `tools`, holds command-line utilities for working alongside coding agents.
 
 ### `demos/`
 
@@ -44,6 +44,12 @@ This directory demonstrates **Stage 4: Context Assembly** through meticulously e
 
 *   **`linguistics-prompts/`**: Implementation of the AI Vocabulary Coach system, including the "Heehler Method Vocabulary Coach" that extends finite expertise infinitely through call transcript analysis and vocabulary edge expansion
 *   **`osint/`**: Automated CRM Enrichment and systematic serendipity prompts, including "Individual Reputation Research" for connection research and context matching against ideal customer profiles
+
+### `tools/`
+
+Command-line utilities for working alongside AI coding agents. Each is a starting point to adapt.
+
+*   **`aws-session/`**: AWS credential helper for coding agents. SSO first, each alias pinned to one account, and an `exec` form that sandboxed agent shells will run. Includes a stub-based test suite that needs no AWS account.
 
 ## Types of Examples Included
 
@@ -93,5 +99,9 @@ This systematic approach leverages a deliberate technology stack:
 *   **Quarto**: Open-source publishing system for dynamic, reproducible documents
 *   **LaTeX / XeLaTeX**: Professional typography and document preparation
 *   **RevealJS**: Interactive presentation framework
+
+## License
+
+MIT. See [LICENSE](LICENSE).
 
 This isn't a random collection of tools—it's a systematic pipeline for manufacturing perfect, context-rich AI collaboration.
