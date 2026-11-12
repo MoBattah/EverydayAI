@@ -24,3 +24,6 @@ _freeze/
 !demos/alpine-ai/resume-system/outputs/ai-consultant/ai-consultant-resume.pdf
 !demos/alpine-ai/resume-system/outputs/tech-leadership/tech-leadership-resume.pdf
 !demos/alpine-ai/presentation/index.pdf
+# Python bytecode
+__pycache__/
+*.pyc

@@ -1,0 +1,21 @@
+{
+  "_comment": [
+    "The first edit is valid. The second is ambiguous because 'Next actions' is a",
+    "title that appears twice and no slide scope disambiguates it. The batch must",
+    "return 2 and leave both files byte-for-byte unchanged."
+  ],
+  "edits": [
+    {
+      "op": "replace",
+      "slide": "Incident review",
+      "text": "watch its dashboards",
+      "with": "read the support queue"
+    },
+    {
+      "op": "replace",
+      "text": "Next actions",
+      "with": "What happens next",
+      "note": "Ambiguous: two headings carry this title."
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "_comment": [
+    "The edit places cleanly, but the external checker rejects the new wording.",
+    "Run with: --check-cmd 'python3 ../policy_check.py'",
+    "The batch must return 2 and write nothing."
+  ],
+  "edits": [
+    {
+      "op": "replace",
+      "slide": "Incident review",
+      "text": "watch its dashboards",
+      "with": "leverage the dashboards",
+      "note": "Rejected by the synthetic policy checker."
+    }
+  ]
+}

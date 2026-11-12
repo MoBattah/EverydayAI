@@ -1,0 +1,37 @@
+{
+  "_comment": [
+    "A four-edit batch, one edit of each shape, against examples/sample-deck/index.qmd.",
+    "Run it from the sample-deck directory with --dry-run first.",
+    "Keys: op, text (the anchor), with (the replacement), slide (the scope),",
+    "file (a companion file, style op only), note (carried into the report)."
+  ],
+  "edits": [
+    {
+      "op": "delete",
+      "slide": "The bottom line",
+      "text": ", with further work likely in both regions",
+      "note": "Delete a phrase. The line is respaced and repunctuated after the removal."
+    },
+    {
+      "op": "replace",
+      "slide": "Incident review",
+      "text": "watch its dashboards",
+      "with": "know which signals mean trouble",
+      "note": "Replace a phrase on one line."
+    },
+    {
+      "op": "rephrase",
+      "slide": "The bottom line",
+      "text": "Support response time",
+      "with": "- **Support response time is the clearest operational signal.** Six of eight regions placed it in their top three. Each region needs its own diagnostic before work is scoped.",
+      "note": "Rephrase a claim. The anchor identifies the bullet; the whole bullet is swapped."
+    },
+    {
+      "op": "style",
+      "file": "theme.scss",
+      "text": ".dense table { font-size: 0.515em; }",
+      "with": ".dense table { font-size: 0.49em; }",
+      "note": "Change a visual property in a companion file."
+    }
+  ]
+}

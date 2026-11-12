@@ -42,4 +42,5 @@ future cleanup can remove them in one commit once nothing links to them.
 ## Editing
 
 The deck is one `##` heading per slide. Edit `index.qmd`, then re-render. For a batch of line-level
-revisions, a transactional editor can apply a whole JSON batch atomically and render afterwards.
+revisions, [`tools/quarto-batch-edit`](../../../tools/quarto-batch-edit/) applies a whole JSON batch
+atomically and can render afterwards.
