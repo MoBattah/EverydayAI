@@ -21,7 +21,6 @@ _freeze/
 # --- EXCEPTIONS ---
 # Keep specific, important output files that are part of the demo showcase,
 # as linked from the main README.md.
-!demos/alpine-ai/report-generation/output/AI_Technical_Analysis_Demo.pdf
 !demos/alpine-ai/resume-system/outputs/ai-consultant/ai-consultant-resume.pdf
 !demos/alpine-ai/resume-system/outputs/tech-leadership/tech-leadership-resume.pdf
 !demos/alpine-ai/presentation/index.pdf
