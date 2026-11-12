@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "statuses": [
+    {
+      "name": "Active",
+      "definition": "Work is moving and the record is current"
+    },
+    {
+      "name": "Paused",
+      "definition": "No active work; the record is kept so the context still resolves"
+    },
+    {
+      "name": "Complete",
+      "definition": "Delivered and closed; kept for reference"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "agents": [
+    {
+      "id": "alpha-agent",
+      "purpose": "Owns the Alpha workspace and its two pipelines",
+      "workspaces": ["Alpha"]
+    },
+    {
+      "id": "beta-agent",
+      "purpose": "Owns the Beta reporting workspace",
+      "workspaces": ["Beta"]
+    },
+    {
+      "id": "portfolio-agent",
+      "purpose": "Reviews every workspace in the example registry",
+      "workspaces": ["*"]
+    }
+  ]
+}
