@@ -25,6 +25,7 @@ demonstration, and test commands.
 |---|---|---|---|---|---|
 | [`tools/aws-session`](tools/aws-session/) | Assembly | Account-pinned AWS credentials for agent shells; refuses to answer for the wrong account | Bash, Python test suite | AWS CLI v2.9+ | `python3 tools/aws-session/test_aws_session.py` |
 | [`tools/quarto-batch-edit`](tools/quarto-batch-edit/) | Assembly | Transactional batch editing of Quarto sources with heading-aware placement and all-or-nothing writes | Python 3.10+ | None (Quarto optional) | `python3 tools/quarto-batch-edit/test_quarto_batch_edit.py` |
+| [`tools/agent-continuity`](tools/agent-continuity/) | Inception | Reconstruct a repository's working state in one read-only call: worktrees, unmerged branches, landed commits, open pull requests | Python 3.10+ | Git (`gh` optional) | `python3 tools/agent-continuity/test_agent_continuity.py` |
 
 A project appears here only when its tests pass and its README documents a reproducible
 demonstration.
@@ -65,6 +66,7 @@ show the input side of the pipeline.
 ├── skills/                 Agent skills with their own licenses
 ├── tools/                  Standalone command-line utilities
 │   ├── aws-session/        AWS credential helper for agent shells
+│   ├── agent-continuity/   Read-only repository state reconstruction
 │   └── quarto-batch-edit/  Transactional Quarto edit batches
 ├── CLAUDE.md               Guide for coding agents working in this repository
 └── LICENSE                 MIT
@@ -77,6 +79,7 @@ otherwise. There is no root-level test runner and no shared virtual environment 
 
 ```bash
 python3 tools/aws-session/test_aws_session.py
+python3 tools/agent-continuity/test_agent_continuity.py
 python3 tools/quarto-batch-edit/test_quarto_batch_edit.py
 ```
 

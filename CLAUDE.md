@@ -39,6 +39,7 @@ projects and is updated when a project is added.
 
 ```bash
 python3 tools/aws-session/test_aws_session.py
+python3 tools/agent-continuity/test_agent_continuity.py
 python3 tools/quarto-batch-edit/test_quarto_batch_edit.py
 ```
 
