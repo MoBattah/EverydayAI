@@ -1,28 +1,45 @@
-# Automating the Mundane: Presentation
+# Automating the Mundane: presentation
 
-This directory contains the source code for the main presentation, "Automating the Mundane," built with Quarto and RevealJS.
+Source and rendered output for the four-stage context engineering talk.
 
-## 🚀 Viewing the Presentation
+## View the deck
 
-The easiest way to view the presentation is to open the `index.html` file located in the `_site` directory in your web browser.
+- `index.pdf`: the tracked, rendered deck.
+- `index.qmd`: the Quarto source.
+- `_quarto.yml`: project configuration. The deck renders through Beamer and XeLaTeX.
 
-Alternatively, you can render the presentation yourself.
+## Render it
 
-## 🛠️ Building the Presentation
+Requirements: Quarto and a XeLaTeX installation.
 
-1.  **Install Quarto**: If you haven't already, [install Quarto](https://quarto.org/docs/get-started/).
+```bash
+cd demos/alpine-ai/presentation
+quarto render index.qmd
+```
 
-2.  **Render the presentation**:
-    ```bash
-    quarto render index.qmd
-    ```
+Quarto writes `index.pdf` and `index.tex`. The tracked copies are the last rendered output; a local
+render overwrites them, which is expected.
 
-3.  **View the output**: The rendered HTML will be located in the `_site` directory.
+## Structure
 
-## 📁 File Structure
+```text
+presentation/
+├── _quarto.yml       Beamer project configuration
+├── index.qmd         Slide source
+├── index.pdf         Rendered deck
+├── index.tex         Generated LaTeX
+├── about.qmd         About the speaker
+├── custom.scss       Web styling retained from an earlier RevealJS build
+├── styles.css        Web styling retained from an earlier RevealJS build
+├── images/           Figures used in the slides
+└── _site/            Tracked output from the earlier RevealJS build
+```
 
--   `index.qmd`: The main Quarto file containing the presentation slides.
--   `_quarto.yml`: The project configuration file for Quarto.
--   `custom.scss` / `styles.css`: Custom styling for the presentation.
--   `images/`: Directory containing images used in the slides.
--   `_site/`: The output directory containing the rendered HTML presentation.
+The `_site/` directory and the SCSS/CSS files are leftovers from a RevealJS version of the deck.
+They are kept because they are already published and linked; the current build path is Beamer. A
+future cleanup can remove them in one commit once nothing links to them.
+
+## Editing
+
+The deck is one `##` heading per slide. Edit `index.qmd`, then re-render. For a batch of line-level
+revisions, a transactional editor can apply a whole JSON batch atomically and render afterwards.

@@ -1,90 +1,63 @@
-# Claude Code Context: AI Presentation Project
+# Working in EverydayAI
 
-## Project Overview
-This is a Quarto-based presentation system for Mo Battah's AI presentation titled "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise" for Alpine Investors & Portfolio Companies.
+Guide for coding agents and contributors. The repository is public and MIT licensed. Everything
+committed here is published.
 
-## Repository Structure
-- **Main Project**: `/Users/mo/dev/prompts/demos/latex-quarto/alpine-ai/`
-- **Presentation**: `presentation/` - RevealJS-based slides
-- **Report Generation**: `report-generation/` - PDF document generation demo
-- **Resume System**: `resume-system/` - Modular LaTeX resume builder
+## What this repository is
 
-## Presentation Setup Analysis
+A collection of self-contained demonstrations of context engineering and AI-assisted operations.
+Each project should be runnable from a clean clone, with synthetic inputs and no private
+infrastructure.
 
-### Current Configuration (`_quarto.yml`)
-- **Type**: Website with RevealJS format
-- **Theme**: Default + custom.scss
-- **Features**: ToC enabled, custom CSS styling
-- **Status**: ✅ Successfully builds
+## Layout
 
-### Issues Identified
+| Path | Holds |
+|---|---|
+| `demos/alpine-ai/` | The original presentation, report-generation and resume-system demos |
+| `prompts/` | Prompt libraries by domain |
+| `skills/` | Agent skills, each with its own license where adapted |
+| `tools/` | Standalone command-line utilities |
 
-#### 1. **Git Merge Conflict Artifacts** (CRITICAL)
-- File: `index.qmd` lines 15-17
-- Contains `=======` merge conflict markers
-- Causes content duplication in sections
+Every directory under `tools/` and `demos/` has a `README.md`. The root `README.md` indexes the
+projects and is updated when a project is added.
 
-#### 2. **Content Structure Issues**
-- Duplicate sections (e.g., "My Essential AI Tools" appears twice)
-- Mixed organization between outline and actual content
-- Navigation structure could be improved
+## Conventions
 
-#### 3. **Configuration Improvements Needed**
-- Missing presentation metadata (author, date)
-- RevealJS-specific features not fully utilized
-- No slide numbering or progress indicators
+- **Python standard library only** unless a README states otherwise. No `requirements.txt` is
+  needed for the current projects.
+- **Tests live beside the code**, named `test_<module>.py`, and run directly:
+  `python3 tools/<name>/test_<name>.py`.
+- **Temporary Git repositories** are built inside the test's temp directory. Tests must not touch
+  the contributor's checkout.
+- **Stub external commands** on `PATH` rather than requiring an account. `gh` and `quarto` are the
+  two commands treated this way.
+- **Exit codes are part of the interface.** Document them in the README and test them.
+- **Failure paths are tested.** A tool that reports ambiguity or refuses a partial write needs a
+  test that proves it.
 
-### Recommendations for Best Practices
+## Commands
 
-#### 1. **Clean Up Merge Conflicts**
-- Remove `=======` artifacts
-- Consolidate duplicate content
-- Ensure consistent formatting
-
-#### 2. **Enhance RevealJS Configuration**
-```yaml
-format:
-  revealjs:
-    theme: [default, custom.scss]
-    css: styles.css
-    toc: true
-    slide-number: true
-    show-slide-number: all
-    hash-type: number
-    transition: slide
-    background-transition: fade
+```bash
+python3 tools/aws-session/test_aws_session.py
 ```
 
-#### 3. **Improve Metadata**
-```yaml
----
-title: "The Asymmetric Bet: Over-Indexing on AI for Engineering and Enterprise"
-subtitle: "Alpine Investors & Portfolio Companies"
-author: "Mo Battah"
-date: "2025-08-20"
-format: revealjs
----
-```
+There is no root-level runner. Each suite prints its own tally and exits non-zero on failure.
 
-#### 4. **Content Organization**
-- Use clear slide breaks (`---`)
-- Implement hierarchical structure
-- Separate speaker notes from slide content
+## Publication rules
 
-## Technical Environment
-- **Quarto**: v1.7.31 ✅
-- **LaTeX**: TinyTeX 2025 ✅
-- **Pandoc**: v3.6.3 ✅
-- **Build Status**: Successfully renders to HTML
+Before committing, check the diff for:
 
-## Related Demos
-- **Report Generation**: Professional PDF output using XeLaTeX
-- **Resume System**: Modular LaTeX system with build scripts
-- **Prompt Library**: OSINT and linguistics prompts
+- credentials, tokens, account identifiers, email addresses and phone numbers
+- client names, private repository links, internal hostnames and absolute home-directory paths
+- fixtures derived from confidential communications or business records
+- third-party code without a compatible license and attribution
 
-## Next Steps Priority
-1. Fix merge conflict artifacts
-2. Restructure content for clear slide flow
-3. Enhance RevealJS configuration
-4. Add proper metadata
-5. Test presentation flow and timing
+Use synthetic names (`Alpha`, `Beta`, `acme`, `example.com`) and synthetic data. When adapting
+third-party material, keep its license file beside it and record the source in the README.
+
+## Writing
+
+Prose in this repository follows a plain style: no em dashes, no "X, not Y" antithesis slogans, no
+authenticity intensifiers (`real`, `actually`, `truly`, `genuinely`, `literally`, `honestly`), and
+no claims beyond what the tests or evidence support. Prefer a concrete command and its output over
+an adjective.

@@ -1,89 +1,59 @@
-# AI + Quarto/LaTeX Demo Project
+# Report generation: Quarto and LaTeX
 
-This project demonstrates professional document generation using AI assistance, Quarto, and LaTeX.
+Turns a technical analysis written as Markdown into a typeset PDF. The source is
+`AI_Technical_Analysis_Demo.qmd`; `build.sh` renders it.
 
-## 🚀 Quick Start
+This demo is about the last mile. Analysis that stays in a chat window is hard to circulate, and a
+document assembled by hand drifts from the analysis it describes. A single source file that renders
+to a consistent PDF fixes both.
 
-1. **Build the demo document:**
-   ```bash
-   ./build.sh
-   ```
+## Quick start
 
-2. **View the result:**
-   The PDF will open automatically (macOS) or check `output/AI_Technical_Analysis_Demo.pdf`
+Requirements: Quarto, XeLaTeX (part of TeX Live or TinyTeX), and the fonts named in the document
+header (Times New Roman and Helvetica Neue). macOS has the best font coverage.
 
-## 📁 Project Structure
-
-```
-alpine-ai/
-├── _quarto.yml                          # Quarto project configuration
-├── AI_Technical_Analysis_Demo.qmd       # Main demo document
-├── build.sh                             # Build automation script
-├── README.md                            # This file
-└── output/                              # Generated PDFs
-    └── AI_Technical_Analysis_Demo.pdf   # Professional output
+```bash
+cd demos/alpine-ai/report-generation
+./build.sh
 ```
 
-## 🎯 What This Demonstrates
+The PDF is written to `output/AI_Technical_Analysis_Demo.pdf` and opened automatically on macOS.
+`output/` is generated and is not committed. The `.qmd` source is the artifact to read and adapt.
 
-- **Professional Typography**: XeLaTeX with Times New Roman/Helvetica
-- **Custom Branding**: Corporate color schemes and styling
-- **Advanced Graphics**: TikZ diagrams generated programmatically
-- **Automation**: Single-command document generation
-- **AI Integration**: Content creation assistance workflow
+## What it demonstrates
 
-## 💡 Key Features
+- **One source, one output.** The Markdown body, the LaTeX preamble and the styling live in the
+  same file, so a change to the argument and a change to the layout land in one commit.
+- **Programmatic diagrams.** TikZ blocks generate the figures, so a diagram is reviewed as text
+  alongside the prose it supports.
+- **Reproducible typography.** Page geometry, colours and fonts are declared in the document, not
+  applied by hand in a word processor.
 
-### Document Generation
-- Professional PDF output with publication-quality typography
-- Custom title pages with branding
-- Automated table of contents and cross-references
-- Embedded diagrams and visualizations
+## Structure
 
-### Technical Implementation
-- Quarto for markdown + code integration
-- XeLaTeX for advanced typography
-- TikZ for programmatic graphics
-- Version-controlled document source
+```text
+report-generation/
+├── _quarto.yml
+├── AI_Technical_Analysis_Demo.qmd
+├── build.sh
+└── README.md
+```
 
-### AI Workflow
-- AI-assisted content creation
-- Automated formatting consistency
-- Rapid iteration and refinement
-- Professional output in minutes
+## Customisation
 
-## 🛠️ Requirements
+Colours are declared in the QMD header:
 
-- **Quarto**: Document generation framework
-- **XeLaTeX**: Typography engine (part of TeX Live)
-- **System Fonts**: Times New Roman, Helvetica Neue
-- **macOS/Linux**: Best font support
-
-## 📋 For Presentations
-
-See `PRESENTATION_NOTES.md` for:
-- Complete presentation script
-- Demo flow checklist
-- Technical talking points
-- Troubleshooting guide
-
-## 🔧 Customization
-
-### Changing Colors
-Edit the LaTeX color definitions in the QMD header:
 ```latex
 \definecolor{primaryblue}{RGB}{0, 102, 204}
 \definecolor{accentgold}{RGB}{255, 193, 7}
 ```
 
-### Updating Content
-Modify `AI_Technical_Analysis_Demo.qmd` with your content while keeping the professional styling.
+Title-page branding lives in the `\renewcommand{\maketitle}` block. Content changes go in the body
+of the `.qmd`.
 
-### Branding
-Update the title page branding in the `\renewcommand{\maketitle}` section.
+## Limitations
 
-## 🎬 Live Demo Ready
-
-This project is optimized for live demonstrations, showcasing how AI + modern tooling transforms technical document creation from a manual, time-intensive process into an automated, professional workflow.
-
-**Built with AI assistance and optimized for presentation impact.**
+- The document depends on system fonts. On a machine without them, XeLaTeX falls back or fails;
+  install the fonts or change the font declarations.
+- `build.sh` opens the PDF with `open`, which is macOS-specific. The render itself is portable.
+- This is a document template. Nothing here decides what the analysis should say.

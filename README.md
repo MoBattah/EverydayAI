@@ -1,107 +1,103 @@
-# Automating the Mundane: A Practitioner's System for Engineering Leverage with AI
+# EverydayAI
 
-This repository demonstrates a **systematic approach to context engineering and AI integration** that transforms scattered thoughts, emails, and documents into deterministic, high-value context for AI collaboration. It showcases the complete **4-Stage Context Engineering Pipeline** and practical examples of systematizing professional workflows.
+Working systems for context engineering and AI-assisted operations.
 
-## The Context Engineering Philosophy
+This repository holds small, tested tools that show how an AI assistant can be given durable
+context, constrained behavior, and recoverable state. Each project runs from a clean clone with
+synthetic data, and each documents the failure modes it was built to handle.
 
-**Context is gold. Without good context engineering, prompt engineering is irrelevant.**
+The through-line is a four-stage pipeline. The stages are useful because each one has a failure
+mode that the next stage cannot repair.
 
-This collection moves beyond random AI tool usage to demonstrate a deliberate, four-stage pipeline for manufacturing perfect, context-rich prompts:
+| Stage | Question it answers | Failure when skipped |
+|---|---|---|
+| **Inception** | How does a thought become a structured asset? | The context exists only in a conversation that will be lost |
+| **Storage** | Where does a fact live, and what else is generated from it? | The same fact is copied into five files and four of them go stale |
+| **Refinement** | How is raw material verified and reduced? | A transcript or a status report is trusted past what the evidence supports |
+| **Assembly** | What context does this task, and only this task, receive? | Every session starts with everything, and the agent drowns |
 
-1. **Inception** → Capture high-bandwidth thought as structured digital assets
-2. **Storage** → Engineer a deterministic context repository, your "second brain"  
-3. **Refinement** → Synthesize raw data into actionable, strategic intelligence
-4. **Assembly** → Orchestrate massive, holistic prompts for insurmountable leverage
+## Engineering projects
 
-The materials here demonstrate how AI transforms from a search tool into a strategic advisor through systematic context engineering.
+Each project has a README with a problem statement, architecture, quick start, a failure
+demonstration, and test commands.
 
-## Repository Structure and Contents
+| Project | Stage | What it demonstrates | Runtime | Dependencies | Quick start |
+|---|---|---|---|---|---|
+| [`tools/aws-session`](tools/aws-session/) | Assembly | Account-pinned AWS credentials for agent shells; refuses to answer for the wrong account | Bash, Python test suite | AWS CLI v2.9+ | `python3 tools/aws-session/test_aws_session.py` |
 
-### Engineering Principles Applied
+A project appears here only when its tests pass and its README documents a reproducible
+demonstration.
 
-This repository contains five practical demonstrations that illustrate engineering principles for AI integration:
+## Context engineering demos
 
-*   **AI-Assisted Technical Analysis: Automating the Last Mile**: [View PDF](demos/alpine-ai/report-generation/output/AI_Technical_Analysis_Demo.pdf)
-*   **AI-Powered Feedback Loop: Systematizing Self-Improvement**: Call transcript analysis for communication improvement
-*   **AI Vocabulary Coach: Extending Finite Expertise Infinitely**: Norman Lewis + Tom Heehler principles applied to call analysis
-*   **Automated CRM Enrichment: Systematizing Serendipity**: Connection research and relationship mapping
-*   **Modular Resume System: Documentation as Code**: [AI Consultant PDF](demos/alpine-ai/resume-system/outputs/ai-consultant/ai-consultant-resume.pdf) | [Tech Leadership PDF](demos/alpine-ai/resume-system/outputs/tech-leadership/tech-leadership-resume.pdf)
+`demos/alpine-ai/` contains the original presentation work that the engineering projects grew out
+of.
 
-The collection is organized into two primary sections: `demos` and `prompts`, demonstrating the complete context engineering workflow. A third, `tools`, holds command-line utilities for working alongside coding agents.
+- **[Presentation](demos/alpine-ai/presentation/)**: "Automating the Mundane", the four-stage
+  argument in slide form. Quarto source, Beamer PDF, and the tracked output.
+- **[Report generation](demos/alpine-ai/report-generation/)**: a Quarto and LaTeX pipeline that
+  turns analysis into a typeset PDF. The `.qmd` source is the artifact; `build.sh` renders it.
+- **[Resume system](demos/alpine-ai/resume-system/)**: documentation as code. Shared content
+  fragments, per-variant LaTeX templates, and two built PDFs from one content base.
+- **Wardrobe database**: a machine-readable inventory used for outfit generation experiments.
 
-### `demos/`
+## Prompts and skills
 
-This directory contains implementations of the Context Engineering Pipeline, demonstrating professional document generation and workflow automation.
+Prompts are the smallest unit in the repository and the easiest to copy. They are kept because they
+show the input side of the pipeline.
 
-*   **`demos/alpine-ai/`**: Complete context engineering system demonstrations
-    *   **`presentation/`**: The main presentation "Automating the Mundane" showcasing the 4-Stage Context Engineering Pipeline using Quarto and RevealJS
-    *   **`report-generation/`**: AI-Assisted Technical Analysis demo showing automated last-mile document production with LaTeX precision and programmatic TikZ diagrams  
-    *   **`resume-system/`**: Modular Resume System implementing "Documentation as Code" principles with extensible LaTeX, source-of-truth data management, and AI-powered customization
+- **[`prompts/linguistics-prompts/`](prompts/linguistics-prompts/)**: vocabulary coaching from call
+  transcripts.
+- **[`prompts/osint/`](prompts/osint/)**: reputation research and technical due diligence.
+- **[`prompts/claude-code/`](prompts/claude-code/)**: codebase audits, performance review, and
+  transcription instructions.
+- **[`skills/socratic-tutor/`](skills/socratic-tutor/)**: a structured tutoring skill with diagnostic
+  placement and spaced review. MIT licensed, adapted from Jane Street's `agent_skills`.
 
-### `prompts/`
+## Repository layout
 
-This directory demonstrates **Stage 4: Context Assembly** through meticulously engineered prompts that show how to orchestrate massive, holistic context for strategic AI collaboration.
+```text
+.
+├── demos/                  Reproducible context engineering demonstrations
+│   └── alpine-ai/          Presentation, report generation, resume system
+├── prompts/                Prompt libraries by domain
+├── skills/                 Agent skills with their own licenses
+├── tools/                  Standalone command-line utilities
+│   └── aws-session/        AWS credential helper for agent shells
+├── CLAUDE.md               Guide for coding agents working in this repository
+└── LICENSE                 MIT
+```
 
-*   **`linguistics-prompts/`**: Implementation of the AI Vocabulary Coach system, including the "Heehler Method Vocabulary Coach" that extends finite expertise infinitely through call transcript analysis and vocabulary edge expansion
-*   **`osint/`**: Automated CRM Enrichment and systematic serendipity prompts, including "Individual Reputation Research" for connection research and context matching against ideal customer profiles
+## Running the tests
 
-### `tools/`
+Every project is self-contained and uses only the Python standard library unless its README says
+otherwise. There is no root-level test runner and no shared virtual environment to create.
 
-Command-line utilities for working alongside AI coding agents. Each is a starting point to adapt.
+```bash
+python3 tools/aws-session/test_aws_session.py
+```
 
-*   **`aws-session/`**: AWS credential helper for coding agents. SSO first, each alias pinned to one account, and an `exec` form that sandboxed agent shells will run. Includes a stub-based test suite that needs no AWS account.
+Tests that touch Git build temporary repositories under the system temp directory. Tests that touch
+GitHub use a stub `gh` on `PATH`, so no account or network access is required.
 
-## Types of Examples Included
+## Design rules
 
-The materials in this repository encompass a variety of formats and applications:
+These rules are what make the projects reproducible, and they are enforced by review.
 
-*   **Quarto Notebooks (`.qmd`)**: For reproducible research, dynamic reports, and interactive presentations.
-*   **LaTeX Templates (`.tex`)**: For professional typography, custom document layouts, and high-quality PDF generation.
-*   **Shell Scripts (`.sh`)**: For automating build processes, content compilation, and workflow orchestration.
-*   **Markdown Files (`.md`)**: For detailed prompt engineering examples, documentation, and instructional content.
-*   **HTML Exports**: Generated from Quarto projects for web-based viewing of presentations and reports.
-*   **PDF Outputs**: Final, professionally formatted documents generated from Quarto and LaTeX sources.
+1. **Standard library first.** A tool that needs a package manager to demonstrate a filesystem
+   invariant is harder to trust and harder to run.
+2. **Synthetic inputs.** No project depends on a private repository, a client dataset, or a live
+   account. Fixtures are checked in.
+3. **Failure is a first-class output.** Ambiguity stops the operation and names the candidates.
+   Partial application is refused as a whole. A command that cannot answer says so and exits
+   non-zero.
+4. **One fact, one home.** Where a fact is projected into Markdown, the projection is generated and
+   the drift is detected.
+5. **Read-only means read-only.** Inspection tools do not fetch, write refs, or touch an index.
 
-## Building Your Own Context Engineering System
-
-**You don't need permission to start building leverage.** This repository provides the complete blueprint:
-
-1.  **Start with Context Inception**: Implement high-bandwidth thought capture (like Wispr Flow) to turn your thoughts into digital assets
-2.  **Build Context Storage**: Create your deterministic context repository using Git + Markdown rather than probabilistic MCP servers
-3.  **Develop Context Refinement**: Use agentic partners (Claude Code, Gemini CLI) to synthesize raw data into strategic intelligence
-4.  **Master Context Assembly**: Use tools like Prompt Tower to orchestrate massive, holistic prompts for complex decisions
-
-**To replicate the examples:**
-- Follow the `build.sh` scripts in `demos/` to reproduce professional outputs
-- Examine the `.qmd` files to understand the context engineering techniques
-- Adapt the prompt templates in `prompts/` for your specific use cases
-- Fork and contribute your own systematized workflows
-
-## The Context Engineering Stack
-
-This systematic approach leverages a deliberate technology stack:
-
-**Stage 1 - Context Inception:**
-*   **Wispr Flow**: High-bandwidth thought capture (~100K words/month voice dictation)
-
-**Stage 2 - Context Storage:**
-*   **Git + Markdown**: Deterministic context repository, version-controlled second brain
-*   **Google AI Studio**: Free call transcription service
-
-**Stage 3 - Context Refinement:**
-*   **Claude Code / Gemini CLI**: Agentic partners for data synthesis and intelligence generation
-
-**Stage 4 - Context Assembly:**
-*   **Prompt Tower (VSCode Extension)**: Ultimate context assembler for massive, holistic prompts
-*   **Gemini**: Million-token context window for comprehensive analysis
-
-**Professional Output:**
-*   **Quarto**: Open-source publishing system for dynamic, reproducible documents
-*   **LaTeX / XeLaTeX**: Professional typography and document preparation
-*   **RevealJS**: Interactive presentation framework
-
-## License
+## License and attribution
 
 MIT. See [LICENSE](LICENSE).
 
-This isn't a random collection of tools—it's a systematic pipeline for manufacturing perfect, context-rich AI collaboration.
+`skills/socratic-tutor/` carries its own MIT license from Jane Street Group, LLC; see
+[`skills/socratic-tutor/LICENSE.md`](skills/socratic-tutor/LICENSE.md).
