@@ -32,8 +32,7 @@ demonstration.
 
 ## Context engineering demos
 
-`demos/alpine-ai/` contains the original presentation work that the engineering projects grew out
-of.
+`demos/` holds the original presentation work and a self-contained storage demonstration.
 
 - **[Presentation](demos/alpine-ai/presentation/)**: "Automating the Mundane", the four-stage
   argument in slide form. Quarto source, Beamer PDF, and the tracked output.
@@ -42,6 +41,8 @@ of.
 - **[Resume system](demos/alpine-ai/resume-system/)**: documentation as code. Shared content
   fragments, per-variant LaTeX templates, and two built PDFs from one content base.
 - **Wardrobe database**: a machine-readable inventory used for outfit generation experiments.
+- **[Deterministic context](demos/deterministic-context/)**: one JSON record per workspace, every
+  Markdown view generated from it, and a check that fails when a copy drifts.
 
 ## Prompts and skills
 
@@ -61,7 +62,8 @@ show the input side of the pipeline.
 ```text
 .
 ├── demos/                  Reproducible context engineering demonstrations
-│   └── alpine-ai/          Presentation, report generation, resume system
+│   ├── alpine-ai/          Presentation, report generation, resume system
+│   └── deterministic-context/  Records as data, views generated, drift checked
 ├── prompts/                Prompt libraries by domain
 ├── skills/                 Agent skills with their own licenses
 ├── tools/                  Standalone command-line utilities
@@ -81,6 +83,7 @@ otherwise. There is no root-level test runner and no shared virtual environment 
 python3 tools/aws-session/test_aws_session.py
 python3 tools/agent-continuity/test_agent_continuity.py
 python3 tools/quarto-batch-edit/test_quarto_batch_edit.py
+python3 demos/deterministic-context/test_context_registry.py
 ```
 
 Tests that touch Git build temporary repositories under the system temp directory. Tests that touch

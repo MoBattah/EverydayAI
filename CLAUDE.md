@@ -41,6 +41,7 @@ projects and is updated when a project is added.
 python3 tools/aws-session/test_aws_session.py
 python3 tools/agent-continuity/test_agent_continuity.py
 python3 tools/quarto-batch-edit/test_quarto_batch_edit.py
+python3 demos/deterministic-context/test_context_registry.py
 ```
 
 There is no root-level runner. Each suite prints its own tally and exits non-zero on failure.

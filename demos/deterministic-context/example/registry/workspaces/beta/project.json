@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "name": "Beta",
+  "status": "Paused",
+  "status_since": "2026-02-02",
+  "status_note": "Paused while the Alpha schema settles",
+  "summary": "A synthetic reporting workspace that consumes Alpha output",
+  "depends_on": ["Alpha"]
+}

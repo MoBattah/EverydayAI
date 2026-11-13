@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "name": "Alpha",
+  "status": "Active",
+  "status_since": "2026-01-15",
+  "status_note": "First synthetic workspace; used throughout the walkthrough",
+  "summary": "A synthetic analytics workspace with two pipelines",
+  "depends_on": []
+}
