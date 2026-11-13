@@ -1,0 +1,48 @@
+---
+title: "Quarterly Review"
+subtitle: "Synthetic deck for the batch editor demonstration"
+author: "Example Author"
+format:
+  revealjs:
+    theme: [default, theme.scss]
+    slide-number: true
+---
+
+# Quarterly review
+
+## The bottom line
+
+- Revenue grew 14 percent year over year, with further work likely in both regions.
+- Support response time is the clearest operational signal across the business.
+- The professional services line is small and growing slowly.
+
+## What changed
+
+The team moved incident review from a weekly meeting to a written record.
+
+## Incident review {.smaller}
+
+The engineers who own a service watch its dashboards.
+
+## Next actions
+
+1. Talk to each regional lead.
+2. Request read-only access to the support queue.
+
+## Next actions
+
+- The same title appears twice on purpose.
+
+## Method
+
+This is the web version of the method note.
+
+::: {.content-visible when-format="typst"}
+## Method
+
+This is the PDF version of the method note.
+:::
+
+## Appendix
+
+Background material.
